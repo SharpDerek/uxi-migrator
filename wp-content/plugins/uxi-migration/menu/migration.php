@@ -32,7 +32,7 @@ if (!UXI_THEME_INSTALLED): ?>
 		if ($err) {
 		  echo "cURL Error #:" . $err;
 		} else {
-		  echo '<pre>'.htmlentities($response).'</pre>';
+		  require(UXI_MIGRATOR_PATH.'migrator/migrator.php');
 		}
 
 	} ?>
