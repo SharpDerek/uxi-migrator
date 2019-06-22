@@ -1,48 +1,33 @@
 <div class="wrap">
-<h1 class="wp-heading-inline">UXI MIGRATOR</h1>
+	<h1 class="wp-heading-inline">UXI MIGRATOR</h1>
 
-<?php
+	<div class="migrator-wrap">
 
-if (!UXI_THEME_INSTALLED): ?>
+	<?php
 
-<p>This migrator will not work unless the UXi Migration theme is installed</p>
+	if (!UXI_THEME_INSTALLED): ?>
 
-<?php else: ?>
+	<p>This migrator will not work unless the UXi Migration theme is installed</p>
 
-	<?php if (isset($_POST['uxi-url'])) {
+	<?php else: ?>
 
-		$curl = curl_init();
+		<?php if (isset($_POST['uxi-url'])) {
 
-		curl_setopt_array($curl, array(
-		  CURLOPT_URL => $_POST['uxi-url'],
-		  CURLOPT_RETURNTRANSFER => true,
-		  CURLOPT_ENCODING => "",
-		  CURLOPT_MAXREDIRS => 10,
-		  CURLOPT_TIMEOUT => 30,
-		  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-		  CURLOPT_CUSTOMREQUEST => "GET",
-		  CURLOPT_POSTFIELDS => "",
-		));
+			$response = uxi_curl($_POST['uxi-url']);
 
-		$response = curl_exec($curl);
-		$err = curl_error($curl);
+			if ($response) {
+				require(UXI_MIGRATOR_PATH.'migrator/migrator.php');
+			}
 
-		curl_close($curl);
+		} ?>
 
-		if ($err) {
-		  echo "cURL Error #:" . $err;
-		} else {
-		  require(UXI_MIGRATOR_PATH.'migrator/migrator.php');
-		}
-
-	} ?>
-
-   <form method="post" action="<?php menu_page_url('uxi-migration',true); ?>">
-     <p class="submit">
-       <input type="text" name="uxi-url" placeholder="type your URL here">
-       <input name="do_it" type="submit" class="button-primary" value="Start Migration"> 
-     </p>
-   </form>
-<?php endif; ?>
+	   <form method="post" action="<?php menu_page_url('uxi-migration',true); ?>">
+	     <p class="submit">
+	       <input type="text" name="uxi-url" placeholder="type your URL here">
+	       <input name="do_it" type="submit" class="button-primary" value="Start Migration"> 
+	     </p>
+	   </form>
+	<?php endif; ?>
+	</div>
 </div>
 <?php 

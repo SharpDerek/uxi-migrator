@@ -11,6 +11,9 @@ define('UXI_MIGRATOR_PATH',plugin_dir_path(__FILE__));
 define('UXI_THEME_INSTALLED',wp_get_theme()->name === 'UXi Migration');
 
 
+require_once(UXI_MIGRATOR_PATH.'migrator/uxi-curl.php');
+require_once(UXI_MIGRATOR_PATH.'migrator/uxi-write.php');
+
 
 function uxi_menu_page() {
 	add_menu_page(
@@ -25,6 +28,6 @@ function uxi_menu_page() {
 }
 
 function uxi_options_page() {
-	require_once(plugin_dir_path(__FILE__).'menu/migration.php');
+	require_once(UXI_MIGRATOR_PATH.'menu/migration.php');
 }
 add_action('admin_menu','uxi_menu_page');
