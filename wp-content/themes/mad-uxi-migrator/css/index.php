@@ -1,9 +1,9 @@
 <?php
 
 function enqueue_uxi_styles() {
-	foreach (scandir(plugin_dir_path(__FILE__)) as $css) {
-		$path = plugin_dir_path(__FILE__).'/'.$css;
-		$url = plugin_dir_url(__FILE__).'/'.$css;
+	foreach (scandir(get_stylesheet_directory().'/css') as $css) {
+		$path = get_stylesheet_directory().'/css/'.$css;
+		$url = get_stylesheet_directory_uri().'/css/'.$css;
 		if (is_file($path)) {
 			$name = str_replace('.','-',$css);
 			wp_enqueue_style($name,$url);
@@ -11,4 +11,4 @@ function enqueue_uxi_styles() {
 	}
 }
 
-add_action('wp_enqueue_scripts','uxi_enqueue_styles');
+add_action('wp_enqueue_scripts','enqueue_uxi_styles');

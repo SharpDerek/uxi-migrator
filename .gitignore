@@ -1,15 +1,3 @@
-
 wp-config.php
-wp-content/themes/.DS_Store
-wp-content/themes/mad-uxi-migration/.DS_Store
-wp-content/themes/.DS_Store
-wp-content/themes/.DS_Store
-wp-content/themes/mad-uxi-migration/assets/.DS_Store
-wp-content/themes/.DS_Store
-wp-content/themes/.DS_Store
-wp-content/themes/.DS_Store
-wp-content/plugins/wordpress-importer/
 wp-content/uploads/
-.DS_Store
-wp-content/themes/.DS_Store
-wp-content/.DS_Store
+*.DS_Store

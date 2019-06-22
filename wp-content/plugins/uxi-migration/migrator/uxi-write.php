@@ -21,7 +21,13 @@ function uxi_write($path, $mode = 'w', $write, $is_image = false, $return = fals
 			if (fclose($file)) {
 				echo $return;
 				return true;
+			} else {
+				echo '<br>';
+				return false;
 			}
+		} else {
+			echo '<br>';
+			return false;
 		}
 	} else {
 		echo "UXI_DO_WRITE set to false for ".$return;
@@ -40,6 +46,9 @@ function uxi_copy($url, $path, $return = false) {
 		if (copy($url,MAD_UXI_THEME_PATH.$path)) {
 			echo $return;
 			return true;
+		} else {
+			echo "<br>";
+			return false;
 		}
 	}
 	echo "UXI_DO_WRITE set to false for ".$return;

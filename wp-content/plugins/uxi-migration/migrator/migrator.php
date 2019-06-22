@@ -42,7 +42,7 @@ if ($response) {
 				if ($filepath) {
 					$file_curl = uxi_curl($filepath);
 					if ($file_curl) {
-						@uxi_write(
+						uxi_write(
 							'/'.explode('#',str_replace('../','',$thisUrl))[0],
 							'xb',
 							$file_curl
@@ -66,7 +66,7 @@ if ($response) {
 							}
 							$css = uxi_get_local_img($css);
 
-							@uxi_write(
+							uxi_write(
 								'/css/'.$id->value.'.css',
 								'xb',
 								"/*====".$id->value."====*/\n\n".
