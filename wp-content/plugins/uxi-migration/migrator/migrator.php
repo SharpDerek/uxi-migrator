@@ -30,7 +30,7 @@ if ($response) {
 
 		function doHead($dom) {
 			foreach($dom->getElementsByTagName('head') as $head) {
-				uxi_write('/header.php',$dom->saveHTML($head),'Header file rewritten.');
+				uxi_write('/header.php',$dom->saveHTML($head),'a',false,'Header file rewritten.');
 				//echo '<pre>'.htmlentities($dom->saveHTML($head)).'</pre>';
 			}
 		}
@@ -42,11 +42,10 @@ if ($response) {
 				if ($filepath) {
 					$file_curl = uxi_curl($filepath);
 					if ($file_curl) {
-						uxi_write(
+						@uxi_write(
 							'/assets/'.explode('#',str_replace('../','',$thisUrl))[0],
-							'x',
-							$file_curl,
-							"font file created.\n"
+							'xb',
+							$file_curl
 						);
 					}
 				}
@@ -65,22 +64,13 @@ if ($response) {
 							if (strpos($css,'url(') > -1) {
 								extractExternalAssets($css, $href->value);
 							}
+							$css = uxi_get_local_img($css);
+
 							@uxi_write(
 								'/assets/css/'.$id->value.'.css',
-								'x',
+								'xb',
 								"/*====".$id->value."====*/\n\n".
-								uxi_replace_url(
-									str_replace(';',";\n",
-										str_replace('{'," {\n",
-											str_replace('}',"\n}\n\n",
-												str_replace('*/',"*/\n",
-													$css
-												)
-											)
-										)
-									)
-								),
-								$id->value.".css created.\n"
+								uxi_unminify_css($css)
 							);
 						}
 					}
