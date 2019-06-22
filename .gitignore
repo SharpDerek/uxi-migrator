@@ -11,3 +11,5 @@ wp-content/themes/.DS_Store
 wp-content/plugins/wordpress-importer/
 wp-content/uploads/
 .DS_Store
+wp-content/themes/.DS_Store
+wp-content/.DS_Store

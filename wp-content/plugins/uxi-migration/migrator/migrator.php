@@ -8,13 +8,12 @@ if ($response) {
 
 	function uxi_get_head($response) {
 
-		//echo "TEST!!!!";
-
 		$dom = new DOMDocument();
 		@$dom->loadHTML($response);
 
 		function printResponse($response) {
-			echo '<pre>'.htmlentities($response).'</pre>';
+			var_dump($response);
+			//echo '<pre>'.htmlentities($response).'</pre>';
 		}
 
 		function getURL($dom) {
@@ -36,7 +35,25 @@ if ($response) {
 			}
 		}
 
-		function doCSS($dom) {
+		function extractExternalAssets($css, $href) {
+			foreach(explode('url(',$css) as $url) {
+				$thisUrl = explode(')',$url)[0];
+				$filepath = uxi_filepath_navigate($href,$thisUrl);
+				if ($filepath) {
+					$file_curl = uxi_curl($filepath);
+					if ($file_curl) {
+						uxi_write(
+							'/assets/'.explode('#',str_replace('../','',$thisUrl))[0],
+							'x',
+							$file_curl,
+							"font file created.\n"
+						);
+					}
+				}
+			}
+		}
+
+		function doAssets($dom) {
 			foreach($dom->getElementsByTagName('link') as $link) {
 				$href = $link->attributes->getNamedItem('href');
 				$id = $link->attributes->getNamedItem('id');
@@ -45,9 +62,12 @@ if ($response) {
 					if (strpos($href->value,'.css')) {
 						$css = uxi_curl($href->value);
 						if ($css) {
-							uxi_write(
-								'/assets/css/theme.css',
-								'a',
+							if (strpos($css,'url(') > -1) {
+								extractExternalAssets($css, $href->value);
+							}
+							@uxi_write(
+								'/assets/css/'.$id->value.'.css',
+								'x',
 								"/*====".$id->value."====*/\n\n".
 								uxi_replace_url(
 									str_replace(';',";\n",
@@ -60,7 +80,7 @@ if ($response) {
 										)
 									)
 								),
-								"CSS file rewritten.\n"
+								$id->value.".css created.\n"
 							);
 						}
 					}
@@ -70,7 +90,7 @@ if ($response) {
 		define('UXI_URL',getURL($dom));
 		//printResponse($response);
 		//doHead($dom);
-		doCSS($dom);
+		doAssets($dom);
 
 	}
 
