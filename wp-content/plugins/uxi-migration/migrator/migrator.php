@@ -1,7 +1,7 @@
 <?php
 
 if ($response) {
-	//echo '<pre>'.htmlentities($response).'</pre>';
+	echo '<pre>'.htmlentities($response).'</pre>';
 
 	define('MAD_UXI_THEME_PATH',get_stylesheet_directory());
 
