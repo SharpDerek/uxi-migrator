@@ -12,8 +12,8 @@ if ($response) {
 		@$dom->loadHTML($response);
 
 		function printResponse($response) {
-			var_dump($response);
-			//echo '<pre>'.htmlentities($response).'</pre>';
+			//var_dump($response);
+			echo '<pre>'.htmlentities($response).'</pre>';
 		}
 
 		function getURL($dom) {
@@ -43,7 +43,7 @@ if ($response) {
 					$file_curl = uxi_curl($filepath);
 					if ($file_curl) {
 						@uxi_write(
-							'/assets/'.explode('#',str_replace('../','',$thisUrl))[0],
+							'/'.explode('#',str_replace('../','',$thisUrl))[0],
 							'xb',
 							$file_curl
 						);
@@ -67,7 +67,7 @@ if ($response) {
 							$css = uxi_get_local_img($css);
 
 							@uxi_write(
-								'/assets/css/'.$id->value.'.css',
+								'/css/'.$id->value.'.css',
 								'xb',
 								"/*====".$id->value."====*/\n\n".
 								uxi_unminify_css($css)

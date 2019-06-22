@@ -8,7 +8,7 @@ Author: Madwire
 
 define('UXI_MIGRATOR_URL',plugin_dir_url(__FILE__));
 define('UXI_MIGRATOR_PATH',plugin_dir_path(__FILE__));
-define('UXI_THEME_INSTALLED',wp_get_theme()->name === 'UXi Migration');
+define('UXI_THEME_INSTALLED',wp_get_theme()->name === 'UXi Migrator');
 
 
 require_once(UXI_MIGRATOR_PATH.'migrator/uxi-curl.php');

@@ -8,7 +8,7 @@ function uxi_get_local_img($css) {
 					$url_array = explode('/',$url);
 					$img_path = $url_array[count($url_array)-1];
 					//var_dump($url);
-					uxi_copy($url,'/assets/img/'.$img_path);
+					uxi_copy($url,'/img/'.$img_path);
 					// uxi_write(
 					// 	'/assets/img/'.$img_path,
 					// 	'xb',
