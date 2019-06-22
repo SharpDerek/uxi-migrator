@@ -1,10 +1,9 @@
 <?php
 
 if ($response) {
-	echo '<pre>'.htmlentities($response).'</pre>';
+	
 
 	define('MAD_UXI_THEME_PATH',get_stylesheet_directory());
-
 
 
 	function uxi_get_head($response) {
@@ -14,7 +13,21 @@ if ($response) {
 		$dom = new DOMDocument();
 		@$dom->loadHTML($response);
 
-		//var_dump($dom);
+		function printResponse($response) {
+			echo '<pre>'.htmlentities($response).'</pre>';
+		}
+
+		function getURL($dom) {
+			foreach($dom->getElementsByTagName('link') as $link) {
+				$href = $link->attributes->getNamedItem('href');
+				$id = $link->attributes->getNamedItem('id');
+				if ($id) {
+					if ($id->value == 'uxi-site-custom-css')
+					return explode('uxi-site-custom.css',$href->value)[0];
+				}
+			}
+			return false;
+		}
 
 		function doHead($dom) {
 			foreach($dom->getElementsByTagName('head') as $head) {
@@ -36,11 +49,13 @@ if ($response) {
 								'/assets/css/theme.css',
 								'a',
 								"/*====".$id->value."====*/\n\n".
-								str_replace(';',";\n",
-									str_replace('{'," {\n",
-										str_replace('}',"\n}\n\n",
-											str_replace('*/',"*/\n",
-												$css
+								uxi_replace_url(
+									str_replace(';',";\n",
+										str_replace('{'," {\n",
+											str_replace('}',"\n}\n\n",
+												str_replace('*/',"*/\n",
+													$css
+												)
 											)
 										)
 									)
@@ -52,10 +67,10 @@ if ($response) {
 				}
 			}
 		}
-
-
+		define('UXI_URL',getURL($dom));
+		//printResponse($response);
 		//doHead($dom);
-		//doCSS($dom);
+		doCSS($dom);
 
 	}
 

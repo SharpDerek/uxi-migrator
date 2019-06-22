@@ -13,6 +13,7 @@ define('UXI_THEME_INSTALLED',wp_get_theme()->name === 'UXi Migration');
 
 require_once(UXI_MIGRATOR_PATH.'migrator/uxi-curl.php');
 require_once(UXI_MIGRATOR_PATH.'migrator/uxi-write.php');
+require_once(UXI_MIGRATOR_PATH.'migrator/uxi-replace-url.php');
 
 
 function uxi_menu_page() {
