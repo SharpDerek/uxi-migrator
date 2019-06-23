@@ -13,6 +13,8 @@
 
 		<?php if (isset($_POST['uxi-url'])) {
 
+			define('UXI_URL',untrailingslashit($_POST['uxi-url']));
+
 			$response = uxi_curl($_POST['uxi-url']);
 
 			if ($response) {

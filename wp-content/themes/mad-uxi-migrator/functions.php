@@ -6,12 +6,14 @@ require_once get_stylesheet_directory() . '/inc/config.php';         // theme co
 require_once get_template_directory()   . '/inc/cleanup.php';        // wp code cleanup/removal
 require_once get_template_directory()   . '/inc/widgets.php';        // sidebar and widget registration
 require_once get_template_directory()   . '/inc/shortcodes.php';     // shortcodes
+require_once get_template_directory()   . '/inc/posttypes.php';      // post types
 require_once get_template_directory()   . '/inc/template-tags.php';  // template tags
 require_once get_template_directory()   . '/inc/actions.php';        // actions
 require_once get_template_directory()   . '/inc/hooks.php';          // hooks
 require_once get_template_directory()   . '/inc/filters.php';        // filters
 require_once get_stylesheet_directory() . '/inc/custom.php';         // custom functions
 require_once get_stylesheet_directory() . '/inc/enqueue.php';        // scripts and styles enqueue
+require_once get_stylesheet_directory() . '/inc/core.php';        	 // core theme functionality
 
 /**
  * Make theme available for translation

@@ -15,20 +15,22 @@ function uxi_do_header_rows($dom) {
 					$id="";
 					$class="";
 					$content="";
+					$layout = $this_query['layout'];
 					if ($element->hasAttributes()) {
 						$id = $element->attributes->getNamedItem('id')->value;
 						$class = $element->attributes->getNamedItem('class')->value;
 					}
 					if ($this_query['layout'] == 'widget') {
+						//$layout = $element->attributes->getNamedItem('uxi-widget')->value;
 						if ($element->hasChildNodes()) {
 							for($i = 0; $i < $element->childNodes->length; $i++) {
-								$content.=$dom->saveHTML($element->childNodes->item($i));
+								$content.= uxi_relative_url($dom->saveHTML($element->childNodes->item($i)));
 							}
 						}
 					}
 
 					array_push($fields,array(
-						'acf_fc_layout' => $this_query['layout'],
+						'acf_fc_layout' => $layout,
 						'id' => $id,
 						'class' => $class,
 						'content' => $content
@@ -49,6 +51,8 @@ function uxi_do_header_rows($dom) {
 			return $fields;
 		}
 
+		//var_dump(get_field('block','option'));
+		//var_dump(get_field_object('block','option',true,false));
 		update_field('block', array(), 'option');
 
 		$query_array = array(
@@ -77,7 +81,7 @@ function uxi_do_header_rows($dom) {
 			0
 		);
 
-		//var_dump($field_array);
+		var_dump($field_array);
 
 		update_field('block',$field_array,'option');
 

@@ -11,7 +11,7 @@ if ($response) {
 		$dom = new DOMDocument();
 		@$dom->loadHTML($response);
 
-		define('UXI_URL',uxi_get_url($dom));
+		define('UXI_ASSET_URL',uxi_get_url($dom));
 
 		require(UXI_MIGRATIONS_NAME.'do-local-img.php');
 		require(UXI_MIGRATIONS_NAME.'do-external-assets.php');
@@ -21,7 +21,6 @@ if ($response) {
 		//uxi_print_response($response);
 		//uxi_do_assets($dom);
 		uxi_do_header_rows($dom);
-
 
 	}
 
