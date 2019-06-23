@@ -6,19 +6,11 @@ function mad_get_all_wordpress_menus(){
 
 function mad_populate_menus( $field ) {
     
-    // reset choices
     $field['choices'] = array();
-        
-        // while has rows
         foreach(mad_get_all_wordpress_menus() as $menu) {
-            
-            // append to choices
             $field['choices'][$menu->slug] = $menu->name;
             
         }
-
-
-    // return the field
     return $field;
     
 }
