@@ -286,7 +286,7 @@
                         {
                             "key": "field_5d0fa4b534621",
                             "label": "Menu",
-                            "name": "menu",
+                            "name": "widget_uxi_menu",
                             "type": "select",
                             "instructions": "",
                             "required": 0,
@@ -296,7 +296,11 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": [],
+                            "choices": {
+                                "footer-navigation": "Footer Navigation",
+                                "header-navigation": "Header Navigation",
+                                "services-menu": "Services Menu"
+                            },
                             "default_value": [],
                             "allow_null": 0,
                             "multiple": 0,
@@ -407,5 +411,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1561308517
+    "modified": 1561309406
 }
