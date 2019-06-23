@@ -10,6 +10,12 @@ if( function_exists('acf_add_options_page') ) {
 	));
 	
 	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Layout Builder Settings',
+		'menu_title'	=> 'Settings',
+		'parent_slug'	=> 'layout-builder',
+	));
+	
+	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Header Builder',
 		'menu_title'	=> 'Header',
 		'parent_slug'	=> 'layout-builder',

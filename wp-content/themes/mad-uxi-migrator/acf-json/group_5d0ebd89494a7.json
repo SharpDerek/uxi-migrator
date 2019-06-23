@@ -366,6 +366,70 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5d0fdd6bad31c": {
+                    "key": "layout_5d0fdd6bad31c",
+                    "name": "uxi_widget_logo",
+                    "label": "Logo Widget",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d0fdd6bad31f",
+                            "label": "Block",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5d0fdd6bad320",
+                            "label": "ID",
+                            "name": "id",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5d0fdd6bad321",
+                            "label": "Class",
+                            "name": "class",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Block",
@@ -411,5 +475,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1561309406
+    "modified": 1561324727
 }
