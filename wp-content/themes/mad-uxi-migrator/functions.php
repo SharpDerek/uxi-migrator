@@ -1,6 +1,7 @@
 <?php
 
-require_once get_template_directory()   . '/inc/activation.php';     // theme activation
+//require_once get_template_directory()   . '/inc/activation.php';     // theme activation
+require_once get_stylesheet_directory() . '/inc/options.php';        // ACF Options Pages
 require_once get_stylesheet_directory() . '/inc/config.php';         // theme configuration
 require_once get_template_directory()   . '/inc/cleanup.php';        // wp code cleanup/removal
 require_once get_template_directory()   . '/inc/widgets.php';        // sidebar and widget registration
@@ -26,7 +27,7 @@ if ( is_readable( $locale_file ) )
 /**
  * Tell the TinyMCE editor to use a custom stylesheet
 */
-add_editor_style('css/editor.css');
+//add_editor_style('css/editor.css');
 
 /** 
  * add post thumbnail/featured image support
@@ -48,12 +49,12 @@ add_theme_support( 'woocommerce' );
  * add nav menu support
 */
 add_theme_support('menus');
-register_nav_menus(
-  array(
-    'primary_navigation' => 'Primary Navigation',
-    'utility_navigation' => 'Utility Navigation',
-    'footer_navigation' => 'Footer Navigation'
-  )
-);
+// register_nav_menus(
+//   array(
+//     'primary_navigation' => 'Primary Navigation',
+//     'utility_navigation' => 'Utility Navigation',
+//     'footer_navigation' => 'Footer Navigation'
+//   )
+// );
 
 ?>
