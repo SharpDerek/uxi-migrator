@@ -38,3 +38,8 @@ Make it possible to migrate a UXI site with the click of a button.
 7) Click "Run Migration"
 8) QC all pages on site
 9) Done
+
+### Sites to test
+* [ ] https://www.drcohen.ca
+* [ ] https://www.krazykarlspizza.com
+* [ ] https://www.bestglendaledentist.com
