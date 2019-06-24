@@ -1,2 +1,4 @@
-
 wp-config.php
+wp-content/uploads/
+*.DS_Store
+wp-content/.DS_Store
