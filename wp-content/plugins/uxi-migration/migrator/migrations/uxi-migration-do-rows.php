@@ -32,6 +32,7 @@ function uxi_do_rows($dom, $xpath, $query_array, $query_index, $fields = array()
 						'id' => $id,
 						'class' => $class
 					));
+					uxi_print('<i>'.$this_query['layout'].'</i> created. id: "'.$id.'", class: "'.$class.'"',"sub");
 				}
 
 				$elementHTML = $dom->saveHTML($element);

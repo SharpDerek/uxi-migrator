@@ -19,10 +19,12 @@ if ($response) {
 		require(UXI_MIGRATIONS_NAME.'do-assets.php');
 		require(UXI_MIGRATIONS_NAME.'do-rows.php');
 		require(UXI_MIGRATIONS_NAME.'do-rows-header.php');
+		require(UXI_MIGRATIONS_NAME.'do-mobile-header.php');
 
 		//uxi_print_response($response);
 		//uxi_do_assets($dom);
 		uxi_do_header_rows($dom);
+		uxi_do_mobile_header($dom);
 
 	}
 

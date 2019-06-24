@@ -16,3 +16,4 @@ array_push($fields,array(
 	'class' => $class,
 	'content' => uxi_relative_asset_url($content)
 ));
+uxi_print('<i>'.$this_query['layout'].'</i> created. id: "'.$id.'", class: "'.$class.'"',"sub");

@@ -18,7 +18,15 @@ function uxi_relative_asset_url($string) {
 function uxi_relative_url($string) {
 	if (defined('UXI_URL')) {
 		if (UXI_URL) {
-			return str_replace(UXI_URL,'/',$string);
+			return str_replace(
+				untrailingslashit(UXI_URL),
+				'/',
+				str_replace(
+					UXI_URL,
+					'/',
+					$string
+				)
+			);
 		}
 	}
 	return $string;
@@ -26,7 +34,7 @@ function uxi_relative_url($string) {
 function uxi_site_url($string) {
 	if (defined('UXI_URL')) {
 		if (UXI_URL) {
-			return str_replace(UXI_URL,get_site_url(),$string);
+			return str_replace(UXI_URL,trailingslashit(get_site_url()),$string);
 		}
 	}
 	return $string;

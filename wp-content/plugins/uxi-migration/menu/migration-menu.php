@@ -11,25 +11,43 @@
 
 	<?php else: ?>
 
-		<?php if (isset($_POST['uxi-url'])) {
+		<div class="migrator-form">
 
-			define('UXI_URL',untrailingslashit($_POST['uxi-url']));
+		   <form method="post" action="<?php menu_page_url('uxi-migration',true); ?>">
+		     <p class="submit">
+		       <input type="text" name="uxi-url" placeholder="type your URL here">
+		       <input name="do_it" type="submit" class="button-primary" value="Start Migration"> 
+		     </p>
+		   </form>
+		</div>
 
-			$response = uxi_curl($_POST['uxi-url']);
+		<?php if (isset($_POST['uxi-url'])) { ?>
 
-			if ($response) {
-				require(UXI_MIGRATOR_PATH.'migrator/migrations/uxi-migrations-loader.php');
-			}
+   			<div class="migrator-progress">
 
-		} ?>
+	   			<?php
 
-	   <form method="post" action="<?php menu_page_url('uxi-migration',true); ?>">
-	     <p class="submit">
-	       <input type="text" name="uxi-url" placeholder="type your URL here">
-	       <input name="do_it" type="submit" class="button-primary" value="Start Migration"> 
-	     </p>
-	   </form>
+				define('UXI_URL',trailingslashit($_POST['uxi-url']));
+
+				$response = uxi_curl($_POST['uxi-url']);
+
+				if ($response) {
+					require(UXI_MIGRATOR_PATH.'migrator/migrations/uxi-migrations-loader.php');
+				} ?>
+
+
+			</div>
+
+		<?php } ?>
 	<?php endif; ?>
 	</div>
 </div>
+<style>
+.migrator-progress .sub {
+	padding-left:20px;
+}
+.migrator-progress .sub-sub {
+	padding-left:40px;
+}
+</style>
 <?php 

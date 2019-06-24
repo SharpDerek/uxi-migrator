@@ -4,10 +4,8 @@ define('UXI_DO_WRITE',true);
 
 function uxi_write($path, $mode = 'w', $write, $return = false) {
 
-	if ($return) {
-		$return.='<br><br>';
-	} else {
-		$return = get_stylesheet_directory_uri().$path." created.<br><br>";
+	if (!$return) {
+		$return = get_stylesheet_directory_uri().$path." created.";
 	}
 
 	if (UXI_DO_WRITE) {
@@ -15,38 +13,33 @@ function uxi_write($path, $mode = 'w', $write, $return = false) {
 		if ($file) {
 			fwrite($file, $write);
 			if (fclose($file)) {
-				echo $return;
+				uxi_print($return);
 				return true;
 			} else {
-				echo '<br>';
 				return false;
 			}
 		} else {
-			echo '<br>';
 			return false;
 		}
 	} else {
-		echo "UXI_DO_WRITE set to false for ".$return;
+		uxi_print("UXI_DO_WRITE set to false for ".$return);
 	}
 	return false;
 }
 
 function uxi_copy($url, $path, $return = false) {
-	if ($return) {
-		$return.='<br><br>';
-	} else {
-		$return = get_stylesheet_directory_uri().$path."<br><b>copied from</b><br>".$url.".<br><br>";
+	if (!$return) {
+		$return = get_stylesheet_directory_uri().$path."<br><b>copied from</b><br>".$url.".";
 	}
 
 	if  (UXI_DO_WRITE) {
 		if (copy($url,UXI_THEME_PATH.$path)) {
-			echo $return;
+			uxi_print($return);
 			return true;
 		} else {
-			echo "<br>";
 			return false;
 		}
 	}
-	echo "UXI_DO_WRITE set to false for ".$return;
+	uxi_print("UXI_DO_WRITE set to false for ".$return);
 	return false;
 }

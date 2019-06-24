@@ -6,7 +6,7 @@ function uxi_do_header_rows($dom) {
 		$xpath = new DOMXpath($dom);
 
 		//var_dump(get_field('block','option'));
-		update_field('block', array(), 'option');
+		//update_field('block', array(), 'option');
 
 		$query_array = array(
 			array(
@@ -27,6 +27,8 @@ function uxi_do_header_rows($dom) {
 			)
 		);
 
+		uxi_print("Start Header Rows.");
+
 		$field_array = uxi_do_rows(
 			$dom,
 			$xpath,
@@ -37,6 +39,7 @@ function uxi_do_header_rows($dom) {
 		//var_dump($field_array);
 
 		update_field('block',$field_array,'option');
+		uxi_print("Header Rows Created.");
 
 	}
 }
