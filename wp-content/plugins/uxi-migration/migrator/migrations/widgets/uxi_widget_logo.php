@@ -18,7 +18,7 @@ if (!$uxi_logo['logo_fallback_url']) {
 			$src = $logo->attributes->getNamedItem('src');
 			$uxi_logo['logo_fallback_url'] = uxi_relative_asset_url($src->value);
 			update_field('uxi_logo',$uxi_logo,'option');
-			uxi_print("Logo Fallback URL set to ".xi_relative_asset_url($src->value));
+			uxi_print("Logo Fallback URL set to ".uxi_relative_asset_url($src->value));
 		}
 	}
 } else {
