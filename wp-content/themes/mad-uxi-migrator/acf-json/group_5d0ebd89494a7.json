@@ -463,7 +463,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "uxi-page-layout"
+                "value": "uxi-main-layout"
             }
         ],
         [
@@ -482,5 +482,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1561429384
+    "modified": 1561434466
 }

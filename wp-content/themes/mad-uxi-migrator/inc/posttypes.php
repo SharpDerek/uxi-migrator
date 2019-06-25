@@ -91,14 +91,14 @@ function mad_register_post_types(){
 		'show_ui' => true,
 		'show_in_menu' => 'uxi-layout-templates',
 		'query_var' => true,
-		'rewrite' => array( 'slug' => 'uxi-page-layout' ),
+		'rewrite' => array( 'slug' => 'uxi-main-layout' ),
 		'capability_type' => 'page',
 		'has_archive' => true,
 		'hierarchical' => false,
 		'menu_position' => 20,
 		'supports' => array( 'title', )
 	);
-	register_post_type( 'uxi-page-layout', $posttype_args );
+	register_post_type( 'uxi-main-layout', $posttype_args );
 
 	$posttype_labels = array(
 		'name' => __('Footer Layouts', 'mad'),
