@@ -17,14 +17,10 @@ function uxi_do_rows($dom, $xpath, $query_array, $query_index, $fields = array()
 				}
 				if ($this_query['layout'] == 'widget') {
 					$widget_layout = $element->attributes->getNamedItem('uxi-widget')->value;
-					$widget_file = UXI_WIDGETS_PATH.
-						uxi_get_layout(
-							'block',
+					$widget_file = uxi_get_widget(
 							$widget_layout,
-							'widget',
-							'option'
-						)
-						.'.php';
+							'widget'
+						);
 					require($widget_file);
 				} else {
 					array_push($fields,array(

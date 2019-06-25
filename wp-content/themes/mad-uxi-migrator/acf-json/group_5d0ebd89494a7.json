@@ -454,16 +454,23 @@
         ],
         [
             {
-                "param": "options_page",
+                "param": "post_type",
                 "operator": "==",
-                "value": "acf-options-header"
+                "value": "uxi-header-layout"
             }
         ],
         [
             {
-                "param": "options_page",
+                "param": "post_type",
                 "operator": "==",
-                "value": "acf-options-footer"
+                "value": "uxi-main-layout"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "uxi-footer-layout"
             }
         ]
     ],
@@ -475,5 +482,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1561324727
+    "modified": 1561434466
 }

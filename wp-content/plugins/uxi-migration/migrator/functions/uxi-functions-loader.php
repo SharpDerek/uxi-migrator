@@ -10,7 +10,7 @@ require_once(UXI_FUNCTIONS_NAME.'menu-match.php');
 
 //other functions
 require_once(UXI_FUNCTIONS_NAME.'print.php');
-require_once(UXI_FUNCTIONS_NAME.'get-layout.php');
+require_once(UXI_FUNCTIONS_NAME.'get-widget.php');
 require_once(UXI_FUNCTIONS_NAME.'curl.php');
 require_once(UXI_FUNCTIONS_NAME.'filepath-navigate.php');
 require_once(UXI_FUNCTIONS_NAME.'replace-url.php');
