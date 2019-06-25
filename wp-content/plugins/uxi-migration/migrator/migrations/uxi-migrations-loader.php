@@ -23,9 +23,9 @@ if ($response) {
 		require(UXI_MIGRATIONS_NAME.'mobile-header.php');
 
 		//uxi_print_response($response);
-		//uxi_do_assets($dom);
+		uxi_do_assets($dom);
 		uxi_do_layout($dom);
-		//uxi_do_mobile_header($dom);
+		uxi_do_mobile_header($dom);
 
 	}
 
