@@ -19,21 +19,53 @@
 		       <input name="do_it" type="submit" class="button-primary" value="Start Migration"> 
 		     </p>
 		   </form>
+		   <button id="important-button">I'm a button!</button>
 		</div>
 
 		<?php if (isset($_POST['uxi-url'])) { ?>
 
    			<div class="migrator-progress">
+			
+			<?php
+				/**
+				 * Provide a admin area view for the plugin
+				 *
+				 * This file is used to markup the admin-facing aspects of the plugin.
+				 *
+				 */
+				// check for admin role of current user
+				function is_site_admin(){
+				  return in_array('administrator',  wp_get_current_user()->roles);
+				}
 
-	   			<?php
+				// create nonce for auth if the user is admin
+				if (is_site_admin()) {
+				  $nonce = wp_create_nonce( 'wp_rest' );
+				} else {
+				  $nonce = 'none';
+				}
+				echo "<script>";
+				echo "var do_rest = true;\n";
+				echo "var uxi_url = '".trailingslashit($_POST['uxi-url'])."';\n";
+				$args = array (
+					'post_type' => 'page',
+					'posts_per_page' => -1,
+				);
+				$pages_query = new WP_Query($args);
+				if ($pages_query->have_posts()) {
+					echo "var pageArray=[";
+					while($pages_query->have_posts()) {
+						$pages_query->the_post();
+						echo get_the_ID();
+						echo ",\n";
+					}
+					echo "];";
+				}
+				echo "var nonce = '".$nonce."';\n </script>";
 
 				define('UXI_URL',trailingslashit($_POST['uxi-url']));
-
-				$response = uxi_curl($_POST['uxi-url']);
-
-				if ($response) {
-					require(UXI_MIGRATOR_PATH.'migrator/migrations/uxi-migrations-loader.php');
-				} ?>
+				
+				?>
 
 
 			</div>
