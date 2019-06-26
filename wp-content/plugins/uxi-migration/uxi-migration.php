@@ -31,12 +31,12 @@ function uxi_menu_page() {
 	 1
 	);
 
-	require_once(UXI_MIGRATOR_PATH.'scripts/index.php');
+	require_once(UXI_MIGRATOR_PATH.'scripts/uxi-script-enqueue.php');
 }
 
 add_action('admin_menu','uxi_menu_page');
 
 function uxi_rest() {
-	require(UXI_MIGRATOR_PATH.'migrator/migrations/uxi-migration-do-rest-endpoint.php');
+	require(UXI_MIGRATOR_PATH.'rest/uxi-rest-endpoint.php');
 }
 add_action('plugins_loaded','uxi_rest');

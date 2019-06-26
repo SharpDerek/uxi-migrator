@@ -3,6 +3,99 @@
     "title": "Layout",
     "fields": [
         {
+            "key": "field_5d12efad283a9",
+            "label": "Layout",
+            "name": "layout",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d0ebd90c151e",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5d12efb6283aa",
+                    "label": "Header Layout",
+                    "name": "uxi_header_layout",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "uxi-header-layout"
+                    ],
+                    "taxonomy": "",
+                    "filters": "",
+                    "elements": "",
+                    "min": "",
+                    "max": 1,
+                    "return_format": "id"
+                },
+                {
+                    "key": "field_5d12efef283ac",
+                    "label": "Page Layout",
+                    "name": "uxi_main_layout",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "uxi-main-layout"
+                    ],
+                    "taxonomy": "",
+                    "filters": "",
+                    "elements": "",
+                    "min": "",
+                    "max": 1,
+                    "return_format": "id"
+                },
+                {
+                    "key": "field_5d12f019283ad",
+                    "label": "Footer Layout",
+                    "name": "uxi_footer_layout",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "uxi-footer-layout"
+                    ],
+                    "taxonomy": "",
+                    "filters": "",
+                    "elements": "",
+                    "min": "",
+                    "max": 1,
+                    "return_format": "id"
+                }
+            ]
+        },
+        {
             "key": "field_5d0ebd90c151e",
             "label": "Block",
             "name": "block",
@@ -482,5 +575,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1561434466
+    "modified": 1561522358
 }

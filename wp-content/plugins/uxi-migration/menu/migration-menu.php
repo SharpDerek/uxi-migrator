@@ -24,6 +24,45 @@
 		<?php if (isset($_POST['uxi-url'])) { ?>
 
    			<div class="migrator-progress">
+
+   				<style>
+   					#migrator-progress-wrap {
+   						width:100%;
+   						max-width:500px;
+   						background: #737373;
+   						overflow:hidden;
+   						border-radius: 50px;
+   						position:relative;
+   						height:50px;
+   					}
+   					#migrator-progress-inner {
+   						position:absolute;
+   						top:0;
+   						bottom:0;
+   						left:0;
+   						width:0;
+   						height:100%;
+   						background: #66ff33;
+   						border-radius:50px;
+   						text-align:center;
+   						overflow:hidden;
+   						display:table;
+   						transition: 0.3s;
+   					}
+   					#migrator-progress-percent {
+   						vertical-align:middle;
+   						color: white;
+   						text-shadow: 1px 1px 2px black;
+   						display:table-cell;
+   						width:0;
+   					}
+   				</style>
+
+   				<div id="migrator-progress-wrap">
+   					<div id="migrator-progress-inner">
+   						<span id="migrator-progress-percent"></span>
+   					</div>
+   				</div>
 			
 			<?php
 				/**
@@ -47,14 +86,18 @@
 				echo "var do_rest = true;\n";
 				echo "var uxi_url = '".trailingslashit($_POST['uxi-url'])."';\n";
 				$args = array (
-					'post_type' => 'page',
+					'post_type' => array (
+						'post',
+						'page',
+						'mad360_testimonial'
+					),
 					'posts_per_page' => -1,
 				);
-				$pages_query = new WP_Query($args);
-				if ($pages_query->have_posts()) {
-					echo "var pageArray=[";
-					while($pages_query->have_posts()) {
-						$pages_query->the_post();
+				$posts_query = new WP_Query($args);
+				if ($posts_query->have_posts()) {
+					echo "var postArray=[";
+					while($posts_query->have_posts()) {
+						$posts_query->the_post();
 						echo get_the_ID();
 						echo ",\n";
 					}

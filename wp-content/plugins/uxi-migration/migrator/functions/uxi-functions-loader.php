@@ -7,6 +7,7 @@ define('UXI_FUNCTIONS_NAME',UXI_FUNCTIONS_PATH.'uxi-function-');
 require_once(UXI_FUNCTIONS_NAME.'get-url.php');
 require_once(UXI_FUNCTIONS_NAME.'print-response.php');
 require_once(UXI_FUNCTIONS_NAME.'menu-match.php');
+require_once(UXI_FUNCTIONS_NAME.'find-layout-post.php');
 
 //other functions
 require_once(UXI_FUNCTIONS_NAME.'print.php');

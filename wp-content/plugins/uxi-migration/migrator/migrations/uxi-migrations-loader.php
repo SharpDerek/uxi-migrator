@@ -7,7 +7,7 @@ if ($response) {
 	define('UXI_WIDGETS_PATH',plugin_dir_path(__FILE__).'widgets/');
 
 
-	function uxi_do_migration($response) {
+	function uxi_do_migration($response, $page_id = false) {
 
 		$dom = new DOMDocument();
 		@$dom->loadHTML($response);
@@ -22,14 +22,19 @@ if ($response) {
 		require(UXI_MIGRATIONS_NAME.'rows.php');
 		require(UXI_MIGRATIONS_NAME.'layout.php');
 		require(UXI_MIGRATIONS_NAME.'mobile-header.php');
+		require(UXI_MIGRATIONS_NAME.'layout-assign.php');
 
 		//uxi_print_response($response);
-		//uxi_do_assets($dom);
+		uxi_do_assets($dom);
 		uxi_do_layout($dom);
-		//uxi_do_mobile_header($dom);
+		uxi_do_mobile_header($dom);
+		if ($page_id) {
+			uxi_do_layout_assign($dom,$page_id);
+		}
+
 
 	}
 
-	uxi_do_migration($response);
+	uxi_do_migration($response, $page_id);
 
 }
