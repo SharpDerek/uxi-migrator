@@ -19,7 +19,6 @@
 		       <input name="do_it" type="submit" class="button-primary" value="Start Migration"> 
 		     </p>
 		   </form>
-		   <button id="important-button">I'm a button!</button>
 		</div>
 
 		<?php if (isset($_POST['uxi-url'])) { ?>
