@@ -23,6 +23,10 @@ function uxi_do_layout($dom) {
 					'layout' => 'grid_item'
 				),
 				array(
+					'query' => '//*[@uxi-row]',
+					'layout' => 'row'
+				),
+				array(
 					'query' => '//*[@class="row"]/*',
 					'layout' => 'grid_item'
 				),

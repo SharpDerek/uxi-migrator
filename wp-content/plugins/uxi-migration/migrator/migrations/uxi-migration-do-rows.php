@@ -38,9 +38,11 @@ function uxi_do_rows($dom, $xpath, $query_array, $query_index, $fields = array()
 
 				$fields = uxi_do_rows($elementDom, $elementXpath, $query_array, $query_index + 1, $fields);
 
-				array_push($fields,array(
-					'acf_fc_layout' => $this_query['layout'].'_close'
-				));
+				if ($this_query['layout'] !== 'widget') {
+					array_push($fields,array(
+						'acf_fc_layout' => $this_query['layout'].'_close'
+					));
+				}
 			}
 		}
 	}

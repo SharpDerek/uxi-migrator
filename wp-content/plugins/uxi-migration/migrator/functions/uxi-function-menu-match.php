@@ -30,6 +30,8 @@ function uxi_menu_match($dom) {
 			if ($menu_item->hasAttributes()) {
 				$url = $menu_item->attributes->getNamedItem('href')->value;
 				$title = $menu_item->textContent;
+				//echo uxi_site_url($url).' = '.$menu[$index]['url'].'<br>';
+				//echo $title.' = '.$menu[$index]['title'].'<br><br>';
 				if (uxi_site_url($url) == $menu[$index]['url'] && $title == $menu[$index]['title']) {
 					$match++;
 				} else {
