@@ -8,6 +8,8 @@ Make it possible to migrate a UXI site with the click of a button.
   * [x] Stylesheets on UXI copied into theme `/css` directory
   * [x] Asset URLs in Stylesheets made into relative paths
     * [x] Images referenced in UXI stylesheets migrated into theme `/img` directory
+* [x] Import UXI Scripts
+  * [x] All scripts on UXI copied into theme `/js` directory
 * [x] Import UXI Fonts
   * [x] All font files referenced in UXI stylesheets copied into theme `/fonts/site` directory
 * [x] ACF Flexible Content generated using UXI page content
@@ -27,8 +29,8 @@ Make it possible to migrate a UXI site with the click of a button.
 * [x] Transition Functions
   * [x] All page URLs changed into relative ones
   * [x] All asset URLs changed to relative ones/media folder ones
-* [ ] Page Crawl
-  * [ ] All pages on site get taken through migration process, cross-referencing their slug with content of the matching slug on UXI
+* [x] Page Crawl
+  * [x] All pages on site get taken through migration process, cross-referencing their slug with content of the matching slug on UXI
   
 ### Ideal Migration Workflow
 1) Spin up site on dev server
