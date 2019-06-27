@@ -16,7 +16,7 @@ function uxi_do_assets($dom) {
 
 					uxi_write(
 						'/css/'.$id->value.'.css',
-						'xb',
+						'wb',
 						"/*====".$id->value."====*/\n\n".
 						uxi_unminify_css($css)
 					);
