@@ -18,6 +18,7 @@ if ($response) {
 		require_once(UXI_MIGRATIONS_NAME.'local-img.php');
 		require_once(UXI_MIGRATIONS_NAME.'external-assets.php');
 		require_once(UXI_MIGRATIONS_NAME.'assets.php');
+		require_once(UXI_MIGRATIONS_NAME.'scripts.php');
 		require_once(UXI_MIGRATIONS_NAME.'create-layout-post.php');
 		require_once(UXI_MIGRATIONS_NAME.'rows.php');
 		require_once(UXI_MIGRATIONS_NAME.'layout.php');
@@ -30,8 +31,8 @@ if ($response) {
 			uxi_do_layout_assign($dom,$page_id);
 		} else  {
 			uxi_do_assets($dom);
+			uxi_do_scripts($dom);
 			uxi_do_mobile_header($dom);
-			//uxi_do_layout($dom);
 		}
 
 
