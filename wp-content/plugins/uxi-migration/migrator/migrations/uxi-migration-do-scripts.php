@@ -17,7 +17,7 @@ function uxi_do_scripts($dom) {
 				$name = explode("?",end(explode("/",$src)))[0];
 				uxi_write(
 					"/js/".$location."/".$name,
-					"xb",
+					"wb",
 					$js
 				);
 			}

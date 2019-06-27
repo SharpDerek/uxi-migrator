@@ -9,7 +9,7 @@ function uxi_do_external_assets($css, $href) {
 			if ($file_curl) {
 				uxi_write(
 					'/'.explode('#',str_replace('../','',$thisUrl))[0],
-					'xb',
+					'wb',
 					$file_curl
 				);
 			}
