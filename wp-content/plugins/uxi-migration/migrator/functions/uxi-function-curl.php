@@ -2,6 +2,8 @@
 
 function uxi_curl($input, $request = "GET") {
 
+
+
 	$curl = curl_init();
 
 	curl_setopt_array($curl, array(
@@ -16,8 +18,11 @@ function uxi_curl($input, $request = "GET") {
 	  CURLOPT_FOLLOWLOCATION => true,
 	));
 
+
 	$response = curl_exec($curl);
 	$err = curl_error($curl);
+
+
 
 	curl_close($curl);
 

@@ -4,10 +4,10 @@ if (!UXI_ITEM) {
 	return;
 }
 
-if ($element->hasChildNodes()) {
-	for($i = 0; $i < $element->childNodes->length; $i++) {
-		$content.= uxi_relative_url($dom->saveHTML($element->childNodes->item($i)));
-	}
+$xpath = new DOMXpath($dom);
+
+foreach($xpath->query($element->getNodePath().'//*[@class="content"]/*') as $child) {
+	$content.= uxi_relative_url($dom->saveHTML($child));
 }
 
 array_push($fields,array(

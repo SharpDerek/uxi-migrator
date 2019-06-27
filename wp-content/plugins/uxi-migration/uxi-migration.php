@@ -15,7 +15,7 @@ define('UXI_THEME_INSTALLED',wp_get_theme()->name === 'UXi Migrator');
 
 function uxi_menu_page() {
 
-	require_once(UXI_MIGRATOR_PATH.'migrator/functions/uxi-functions-loader.php');
+	require(UXI_MIGRATOR_PATH.'migrator/functions/uxi-functions-loader.php');
 
 	function uxi_options_page() {
 		require_once(UXI_MIGRATOR_PATH.'menu/migration-menu.php');
@@ -30,6 +30,13 @@ function uxi_menu_page() {
 	 'dashicons-migrate',
 	 1
 	);
+
+	require_once(UXI_MIGRATOR_PATH.'scripts/uxi-script-enqueue.php');
 }
 
 add_action('admin_menu','uxi_menu_page');
+
+function uxi_rest() {
+	require(UXI_MIGRATOR_PATH.'rest/uxi-rest-endpoint.php');
+}
+add_action('plugins_loaded','uxi_rest');
