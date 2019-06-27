@@ -6,10 +6,6 @@ function uxi_do_mobile_header($dom) {
 		uxi_print("Start Mobile Header.").
 		$mobile_nav = get_field('mobile_navigation', 'option');
 
-		//var_dump($mobile_nav);
-
-		//update_field('mobile_navigation',array(),'option');
-
 		$field = array();
 
 		$xpath = new DOMXpath($dom);

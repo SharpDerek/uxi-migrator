@@ -5,9 +5,6 @@ function uxi_do_layout($dom) {
 
 		$xpath = new DOMXpath($dom);
 
-		//var_dump(get_field('block','option'));
-		//update_field('block', array(), 'option');
-
 		$template_array = array(
 			'uxi-header',
 			'uxi-main',

@@ -65,12 +65,7 @@
    				</div>
 			
 			<?php
-				/**
-				 * Provide a admin area view for the plugin
-				 *
-				 * This file is used to markup the admin-facing aspects of the plugin.
-				 *
-				 */
+			
 				// check for admin role of current user
 				function is_site_admin(){
 				  return in_array('administrator',  wp_get_current_user()->roles);
@@ -105,7 +100,11 @@
 				}
 				echo "var nonce = '".$nonce."';\n </script>";
 
+				$response = uxi_curl($_POST['uxi-url']);
+
 				define('UXI_URL',trailingslashit($_POST['uxi-url']));
+
+				require(UXI_MIGRATOR_PATH.'migrator/migrations/uxi-migrations-loader.php');
 				
 				?>
 
