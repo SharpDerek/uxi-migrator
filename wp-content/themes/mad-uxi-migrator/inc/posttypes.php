@@ -20,9 +20,9 @@ function mad_register_post_types(){
 	);
 	$posttype_args = array(
 		'labels' => $posttype_labels,
-		'public' => true,
-		'publicly_queryable' => true,
-		'exclude_from_search' => false,
+		'public' => false,
+		'publicly_queryable' => false,
+		'exclude_from_search' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
 		'menu_icon'   => 'dashicons-editor-quote',
@@ -53,9 +53,9 @@ function mad_register_post_types(){
 	);
 	$posttype_args = array(
 		'labels' => $posttype_labels,
-		'public' => true,
-		'publicly_queryable' => true,
-		'exclude_from_search' => false,
+		'public' => false,
+		'publicly_queryable' => false,
+		'exclude_from_search' => true,
 		'show_ui' => true,
 		'show_in_menu' => 'uxi-layout-templates',
 		'query_var' => true,
@@ -85,9 +85,9 @@ function mad_register_post_types(){
 	);
 	$posttype_args = array(
 		'labels' => $posttype_labels,
-		'public' => true,
-		'publicly_queryable' => true,
-		'exclude_from_search' => false,
+		'public' => false,
+		'publicly_queryable' => false,
+		'exclude_from_search' => true,
 		'show_ui' => true,
 		'show_in_menu' => 'uxi-layout-templates',
 		'query_var' => true,
@@ -117,9 +117,9 @@ function mad_register_post_types(){
 	);
 	$posttype_args = array(
 		'labels' => $posttype_labels,
-		'public' => true,
-		'publicly_queryable' => true,
-		'exclude_from_search' => false,
+		'public' => false,
+		'publicly_queryable' => false,
+		'exclude_from_search' => true,
 		'show_ui' => true,
 		'show_in_menu' => 'uxi-layout-templates',
 		'query_var' => true,

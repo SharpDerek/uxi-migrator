@@ -3,34 +3,38 @@
   <div class="alert alert-info">
     <?php _e('Sorry, no results were found.', 'mad'); ?>
   </div>
-<?php endif; ?>
+<?php else: ?>
+  <ol class="posts">
 
-<?php /* Start loop */ ?>
-<?php while (have_posts()) : the_post(); ?>
-
-<?php mad_post_before(); ?>
-  <article <?php post_class(); ?> itemscope itemtype="http://schema.org/BlogPosting">
-    <?php mad_post_inside_before(); ?>    
-    
-      <header class="post-header">
-        <h2 itemprop="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-        <?php get_template_part('templates/post-meta'); ?>
-      </header>
-      
-      <div class="post-description clearfix" itemprop="description"> 
+    <?php while (have_posts()) : the_post(); ?>
+      <li <?php post_class(); ?>>
+      <article>
         <?php if ( has_post_thumbnail()) : ?>
-          <a class="post-thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-            <?php the_post_thumbnail('thumbnail', 'itemprop=image'); ?>
-          </a>
+          <div class="post-image post-image-left">
+              <a class="post-image-link" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+                <?php the_post_thumbnail('thumbnail', 'itemprop=image'); ?>
+              </a>
+          </div>
         <?php endif; ?>
-        <?php mad_the_excerpt( POST_EXCERPT_LENGTH ); ?>
-      </div>
-    
-    <?php mad_post_inside_after(); ?>
-  </article>
-<?php mad_post_after(); ?>
+        <div class="post-body">
+          <header class="post-header">
+            <h2 class="post-header-title h3">
+              <a href="<?php the_permalink(); ?>" title="Permanent Link to Full Post" rel="bookmark">
+                <span><?php the_title(); ?></span>
+              </a>
+            </h2>
+            <?php //get_template_part('templates/post-meta'); ?>
+          </header>
+          <div class="post-description clearfix">
+            <?php var_dump(get_the_excerpt()); ?>
+          </div>
+        </div>  
+      </article>
+    </li>
 
-<?php /* End loop */ ?>
-<?php endwhile; wp_reset_query(); ?>
+    <?php endwhile; wp_reset_query(); ?>
 
-<?php mad_posts_pagination(); ?>
+    <?php mad_posts_pagination(); ?>
+  </ol>
+
+<?php endif; ?>
