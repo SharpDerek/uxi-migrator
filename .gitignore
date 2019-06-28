@@ -2,3 +2,5 @@ wp-config.php
 wp-content/uploads/
 *.DS_Store
 wp-content/.DS_Store
+sftp-config.json
+wp-admin/error_log
