@@ -13,30 +13,9 @@ function uxi_do_layout($dom) {
 
 		foreach ($template_array as $template) {
 
-			$query_array = array(
-				array(
-					'query' => '//*[@'.$template.']//*[@data-layout]',
-					'layout' => 'row'
-				),
-				array(
-					'query' => '//*[@data-layout]/*[@class="container"]/*[@class="container-inner"]/*[@class="row"]/*',
-					'layout' => 'grid_item'
-				),
-				array(
-					'query' => '//*[@uxi-row]',
-					'layout' => 'row'
-				),
-				array(
-					'query' => '//*[@class="row"]/*',
-					'layout' => 'grid_item'
-				),
-				array(
-					'query' => '//*[@uxi-widget]',
-					'layout' => 'widget'
-				)
-			);
+			$row_start = '//*[@'.$template.']//*[@data-layout]';
 
-			$uxi_template_id = uxi_do_create_layout_post($xpath, $query_array[0]['query'],$template);
+			$uxi_template_id = uxi_do_create_layout_post($xpath, $row_start,$template);
 
 			if ($uxi_template_id) {
 				uxi_print('Starting '.$template.' template.');
@@ -45,8 +24,9 @@ function uxi_do_layout($dom) {
 					uxi_do_rows(
 						$dom,
 					 	$xpath,
-					 	$query_array,
-					 	0
+					 	'//*[@'.$template.']//*[@data-layout]',
+					 	'row',
+					 	false
 					),
 					$uxi_template_id
 				);

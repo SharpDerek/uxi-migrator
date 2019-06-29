@@ -11,9 +11,9 @@ foreach($xpath->query($element->getNodePath().'//*[@class="content"]/*') as $chi
 }
 
 array_push($fields,array(
-	'acf_fc_layout' => $this_query['layout'],
+	'acf_fc_layout' => $layout,
 	'id' => $id,
 	'class' => $class,
 	'content' => uxi_relative_asset_url($content)
 ));
-uxi_print('<i>'.$this_query['layout'].'</i> created. id: "'.$id.'", class: "'.$class.'"',"sub");
+uxi_print('<i>'.$layout.'</i> created. id: "'.$id.'", class: "'.$class.'"',"sub");
