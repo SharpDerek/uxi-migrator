@@ -4,13 +4,13 @@ jQuery(document).ready(function($) {
 
 		function hit_endpoint(index) {
 			if (index < postArray.length) {
-				console.log("/uxi-migration/wp-json/uxi-migrator/page-scraper?_wpnonce="+nonce+"&page_id="+postArray[index]+"&uxi_url="+uxi_url);
+				console.log("/wp-json/uxi-migrator/page-scraper?_wpnonce="+nonce+"&page_id="+postArray[index]+"&uxi_url="+uxi_url);
 				$.ajax({
 					type: "POST",
-					url: "/uxi-migration/wp-json/uxi-migrator/page-scraper?_wpnonce="+nonce+"&page_id="+postArray[index]+"&uxi_url="+uxi_url,
+					url: "/wp-json/uxi-migrator/page-scraper?_wpnonce="+nonce+"&page_id="+postArray[index]+"&uxi_url="+uxi_url,
 
 				})
-				.always(function() {
+				.done(function() {
 					hit_endpoint(++index);
 					updateProgress(index,postArray.length);
 				});

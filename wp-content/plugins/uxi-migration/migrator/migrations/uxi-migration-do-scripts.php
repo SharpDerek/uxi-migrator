@@ -14,7 +14,7 @@ function uxi_do_scripts($dom) {
 			if ($script->hasAttributes()) {
 				$src = $script->attributes->getNamedItem('src')->value;
 				$js = uxi_curl($src);
-				$name = explode("?",end(explode("/",$src)))[0];
+				@$name = explode("?",end(explode("/",$src)))[0];
 				uxi_write(
 					"/js/".$location."/".$name,
 					"wb",

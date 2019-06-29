@@ -4,3 +4,6 @@ wp-content/uploads/
 wp-content/.DS_Store
 sftp-config.json
 wp-admin/error_log
+*.htaccess
+.htaccess
+.htaccess
