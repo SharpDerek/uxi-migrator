@@ -45,20 +45,24 @@ function uxi_do_rows($dom, $xpath, $query, $layout, $nested, $fields = array() )
 							$gridXpath = new DOMXpath($gridDom);
 
 							foreach($gridXpath->query('/*/*/*/*/*') as $child) {
+								$childHTML = $gridDom->saveHTML($child);
+								$childDom = new DOMDocument();
+								@$childDom->loadHTML($childHTML);
+								$childXpath = new DOMXpath($childDom);
 								if ($child->hasAttribute('uxi-row')) { // Looking for nested row
 									$fields = uxi_do_rows(
-										$gridDom,
-										$gridXpath,
-										'/*/*/*/*/*',
+										$childDom,
+										$childXpath,
+										'/*/*/*',
 										'row',
 										true,
 										$fields
 									);
 								} else { // Assume it is a widget
 									$fields = uxi_do_rows(
-										$gridDom,
-										$gridXpath,
-										'/*/*/*/*/*',
+										$childDom,
+										$childXpath,
+										'/*/*/*',
 										'widget',
 										false,
 										$fields
