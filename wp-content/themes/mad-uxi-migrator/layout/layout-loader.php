@@ -21,9 +21,16 @@ define("UXI_FOOTER_LAYOUT", $layout['uxi_footer_layout'][0]);
 define("UXI_MAIN_LAYOUT", $page_layout_id);
 define("MAIN_PAGE_ID",$main_id);
 
-get_header();
+get_header(); ?>
 
-$layout_id = $page_layout_id;
-require(get_stylesheet_directory().'/layout/layout.php');
-  
-get_footer();
+<div class="mobile-site-wrap site-wrap">
+	<div class="mobile-site-wrap-inner">
+		<div uxi-main id="content" class="content clearfix">
+			<?php
+				$layout_id = $page_layout_id;
+				require(get_stylesheet_directory().'/layout/layout.php');
+			?>
+		</div>
+	</div>
+</div>
+<?php get_footer();
