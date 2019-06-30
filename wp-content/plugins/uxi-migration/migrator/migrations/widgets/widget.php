@@ -10,6 +10,14 @@ foreach($xpath->query($element->getNodePath().'//*[@class="content"]/*') as $chi
 	$content.= uxi_relative_url($dom->saveHTML($child));
 }
 
+$list = get_html_translation_table(HTML_ENTITIES);
+unset($list['"']);
+unset($list['<']);
+unset($list['>']);
+unset($list['&']);
+
+$content = strtr($content, $list);
+
 array_push($fields,array(
 	'acf_fc_layout' => $layout,
 	'id' => $id,

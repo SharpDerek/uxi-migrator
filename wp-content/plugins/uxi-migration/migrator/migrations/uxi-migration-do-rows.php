@@ -41,13 +41,13 @@ function uxi_do_rows($dom, $xpath, $query, $layout, $nested, $fields = array() )
 						} else {
 							$gridHTML = $dom->saveHTML($element);
 							$gridDom = new DOMDocument();
-							@$gridDom->loadHTML($gridHTML);
+							@$gridDom->loadHTML(utf8_decode($gridHTML));
 							$gridXpath = new DOMXpath($gridDom);
 
 							foreach($gridXpath->query('/*/*/*/*/*') as $child) {
 								$childHTML = $gridDom->saveHTML($child);
 								$childDom = new DOMDocument();
-								@$childDom->loadHTML($childHTML);
+								@$childDom->loadHTML(utf8_decode($childHTML));
 								$childXpath = new DOMXpath($childDom);
 								if ($child->hasAttribute('uxi-row')) { // Looking for nested row
 									$fields = uxi_do_rows(
@@ -89,7 +89,7 @@ function uxi_do_rows($dom, $xpath, $query, $layout, $nested, $fields = array() )
 				if ($new_query && $new_layout) {
 					$elementHTML = $dom->saveHTML($element);
 					$elementDom = new DOMDocument();
-					@$elementDom->loadHTML($elementHTML);
+					@$elementDom->loadHTML(utf8_decode($elementHTML));
 					$elementXpath = new DOMXpath($elementDom);
 
 					$fields = uxi_do_rows($elementDom, $elementXpath, $new_query, $new_layout, $new_nested, $fields);

@@ -10,7 +10,7 @@ if ($response) {
 	function uxi_do_migration($response, $page_id = false) {
 
 		$dom = new DOMDocument();
-		@$dom->loadHTML($response);
+		@$dom->loadHTML(utf8_decode($response));
 
 		define('UXI_ASSET_URL',uxi_get_url($dom));
 
