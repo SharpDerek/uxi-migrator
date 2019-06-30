@@ -22,10 +22,10 @@ Make it possible to migrate a UXI site with the click of a button.
 * [x] Import UXI Template Layouts
   * [x] Post type registered for Template Layouts (to allow for multiple Page Templates)
     * [x] ACF Flexible Content rows assigned to appropriate post type for current page/post
-* [ ] Import UXI Mobile Header
+* [x] Import UXI Mobile Header
   * [x] Content brought in for Mobile Header
-  * [ ] Content brought in for Left Mobile Drawer
-  * [ ] Content brought in for Right Mobile Drawer
+  * [x] Content brought in for Left Mobile Drawer
+  * [x] Content brought in for Right Mobile Drawer
 * [x] Transition Functions
   * [x] All page URLs changed into relative ones
   * [x] All asset URLs changed to relative ones/media folder ones
