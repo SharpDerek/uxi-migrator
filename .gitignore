@@ -7,3 +7,5 @@ wp-admin/error_log
 *.htaccess
 .htaccess
 .htaccess
+*.sublime-project
+*.sublime-workspace
