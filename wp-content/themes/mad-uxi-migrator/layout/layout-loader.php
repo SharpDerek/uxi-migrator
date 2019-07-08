@@ -5,7 +5,7 @@ if (!function_exists("get_field")) {
 }
 
 $layout = get_field("layout");
-if (is_home() || is_archive()) {
+if (is_home() || is_archive()) {;
 	$main_id = get_queried_object()->term_id;
 } else {
 	$main_id = get_the_ID();
@@ -22,6 +22,7 @@ define("UXI_MAIN_LAYOUT", $page_layout_id);
 define("MAIN_PAGE_ID",$main_id);
 
 get_header(); ?>
+
 
 <div class="mobile-site-wrap site-wrap">
 	<div class="mobile-site-wrap-inner">

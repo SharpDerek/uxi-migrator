@@ -1,18 +1,18 @@
 jQuery(document).ready(function($) {
 	if (typeof do_rest !== "undefined") {
-		console.log(postArray);
+		console.log(slugArray);
 
 		function hit_endpoint(index) {
-			if (index < postArray.length) {
-				console.log("/wp-json/uxi-migrator/page-scraper?_wpnonce="+nonce+"&page_id="+postArray[index]+"&uxi_url="+uxi_url);
+			if (index < slugArray.length) {
+				console.log("/wp-json/uxi-migrator/page-scraper?_wpnonce="+nonce+"&slug="+slugArray[index]+"&uxi_url="+uxi_url);
 				$.ajax({
 					type: "POST",
-					url: "/wp-json/uxi-migrator/page-scraper?_wpnonce="+nonce+"&page_id="+postArray[index]+"&uxi_url="+uxi_url,
+					url: "/wp-json/uxi-migrator/page-scraper?_wpnonce="+nonce+"&slug="+slugArray[index]+"&uxi_url="+uxi_url,
 
 				})
 				.done(function() {
 					hit_endpoint(++index);
-					updateProgress(index,postArray.length);
+					updateProgress(index,slugArray.length);
 				});
 			}
 		}

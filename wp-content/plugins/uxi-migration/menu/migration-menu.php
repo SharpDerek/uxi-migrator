@@ -90,10 +90,10 @@
 				);
 				$posts_query = new WP_Query($args);
 				if ($posts_query->have_posts()) {
-					echo "var postArray=[";
+					echo "var slugArray=[";
 					while($posts_query->have_posts()) {
 						$posts_query->the_post();
-						echo get_the_ID();
+						echo '"'.get_post_field('post_name',get_the_ID()).'"';
 						echo ",\n";
 					}
 					echo "];";

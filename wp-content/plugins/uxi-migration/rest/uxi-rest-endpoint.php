@@ -4,9 +4,8 @@ function uxi_rest_endpoint(WP_REST_Request $request){
 
   $GLOBALS['uxi_migrator-progress'] = "";
 
-  //if ( check_ajax_referer('wp_rest', '_wpnonce') ){
-  	$page_id = $request['page_id'];
-    $slug = get_post($page_id)->post_name;
+  if ( check_ajax_referer('wp_rest', '_wpnonce') ){
+    $slug = $request['slug'];
     $uxi_url = $request['uxi_url'].$slug;
 
 
@@ -18,7 +17,7 @@ function uxi_rest_endpoint(WP_REST_Request $request){
 
     return $GLOBALS['uxi_migrator-progress'];
 
-  //}
+  }
   return false;
 }
 

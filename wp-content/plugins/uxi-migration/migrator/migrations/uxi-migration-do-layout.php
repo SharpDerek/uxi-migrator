@@ -1,6 +1,6 @@
 <?php
 
-function uxi_do_layout($dom) {
+function uxi_do_layout($dom, $slug) {
 	if (function_exists('update_field')) {
 
 		$xpath = new DOMXpath($dom);
@@ -15,7 +15,7 @@ function uxi_do_layout($dom) {
 
 			$row_start = '//*[@'.$template.']//*[@data-layout]';
 
-			$uxi_template_id = uxi_do_create_layout_post($xpath, $row_start,$template);
+			$uxi_template_id = uxi_do_create_layout_post($xpath, $row_start,$template, $slug);
 
 			if ($uxi_template_id) {
 				uxi_print('Starting '.$template.' template.');

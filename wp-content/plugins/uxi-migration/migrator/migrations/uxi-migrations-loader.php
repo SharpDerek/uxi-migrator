@@ -7,7 +7,7 @@ if ($response) {
 	define('UXI_WIDGETS_PATH',plugin_dir_path(__FILE__).'widgets/');
 
 
-	function uxi_do_migration($response, $page_id = false) {
+	function uxi_do_migration($response, $slug = false) {
 
 		$dom = new DOMDocument();
 		@$dom->loadHTML(utf8_decode($response));
@@ -26,9 +26,9 @@ if ($response) {
 		require_once(UXI_MIGRATIONS_NAME.'layout-assign.php');
 
 		//uxi_print_response($response);
-		if ($page_id) {
-			uxi_do_layout($dom);
-			uxi_do_layout_assign($dom,$page_id);
+		if ($slug) {
+			uxi_do_layout($dom, $slug);
+			uxi_do_layout_assign($dom, $slug);
 		} else  {
 			//uxi_do_layout($dom);
 			//uxi_delete_layouts();
@@ -40,6 +40,6 @@ if ($response) {
 
 	}
 
-	uxi_do_migration($response, $page_id);
+	uxi_do_migration($response, $slug);
 
 }
