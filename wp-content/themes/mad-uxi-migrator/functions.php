@@ -1,6 +1,7 @@
 <?php
 
 //require_once get_template_directory()   . '/inc/activation.php';     // theme activation
+require_once get_stylesheet_directory() . '/inc/uxi-functions.php';  // UXI-specific functions
 require_once get_stylesheet_directory() . '/inc/options.php';        // ACF Options Pages
 require_once get_stylesheet_directory() . '/inc/config.php';         // theme configuration
 require_once get_template_directory()   . '/inc/cleanup.php';        // wp code cleanup/removal

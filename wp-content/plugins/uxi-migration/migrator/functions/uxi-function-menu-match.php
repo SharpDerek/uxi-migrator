@@ -10,7 +10,7 @@ function uxi_menu_match($dom) {
 				foreach(wp_get_nav_menu_items($menu->slug) as $menu_item) {
 					array_push($menu_atts, array(
 						'url' => $menu_item->url,
-						'title' => $menu_item->title
+						'title' => html_entity_decode($menu_item->title)
 					));
 				}
 				$menus[$menu->slug] = $menu_atts;
@@ -29,7 +29,7 @@ function uxi_menu_match($dom) {
 		foreach($query as $menu_item) {
 			if ($menu_item->hasAttributes()) {
 				$url = $menu_item->attributes->getNamedItem('href')->value;
-				$title = $menu_item->textContent;
+				$title = html_entity_decode($menu_item->nodeValue);
 				if (uxi_site_url($url) == $menu[$index]['url'] && $title == $menu[$index]['title']) {
 					$match++;
 				} else {
