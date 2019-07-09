@@ -5,7 +5,11 @@ function uxi_rest_endpoint(WP_REST_Request $request){
   $GLOBALS['uxi_migrator_progress'] = "";
 
   if ( check_ajax_referer('wp_rest', '_wpnonce') ){
+    $post_id = $request['post_id'];
     $slug = $request['slug'];
+    if (!$slug) {
+      $slug = get_post_field('post_name',$post_id);
+    }
     $uxi_url = $request['uxi_url'].$slug;
 
 
