@@ -63,6 +63,9 @@
    						<span id="migrator-progress-percent"></span>
    					</div>
    				</div>
+
+   				<div id="migrator-progress-log">
+   				</div>
 			
 			<?php
 			

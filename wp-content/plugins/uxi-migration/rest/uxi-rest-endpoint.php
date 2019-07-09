@@ -2,7 +2,7 @@
 
 function uxi_rest_endpoint(WP_REST_Request $request){
 
-  $GLOBALS['uxi_migrator-progress'] = "";
+  $GLOBALS['uxi_migrator_progress'] = "";
 
   if ( check_ajax_referer('wp_rest', '_wpnonce') ){
     $slug = $request['slug'];
@@ -15,7 +15,7 @@ function uxi_rest_endpoint(WP_REST_Request $request){
 
     require(UXI_MIGRATOR_PATH.'migrator/migrations/uxi-migrations-loader.php');
 
-    return $GLOBALS['uxi_migrator-progress'];
+    return $GLOBALS['uxi_migrator_progress'];
 
   }
   return false;

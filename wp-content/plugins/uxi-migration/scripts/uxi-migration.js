@@ -10,9 +10,10 @@ jQuery(document).ready(function($) {
 					url: "/wp-json/uxi-migrator/page-scraper?_wpnonce="+nonce+"&slug="+slugArray[index]+"&uxi_url="+uxi_url,
 
 				})
-				.done(function() {
+				.done(function(response) {
 					hit_endpoint(++index);
 					updateProgress(index,slugArray.length);
+					updateProgressLog(response);
 				});
 			}
 		}
@@ -28,6 +29,13 @@ jQuery(document).ready(function($) {
 
 				proginner.css("width",value + "%");
 				progpercent.text(value + "%");
+			}
+		}
+
+		function updateProgressLog(message) {
+			var proglog = $('#migrator-progress-log');
+			if (typeof proglog !== "undefined") {
+				proglog.html(proglog.html() + message + "<br>");
 			}
 		}
 	}

@@ -4,12 +4,13 @@ if (!function_exists("get_field")) {
 	die("Looks like you don't have ACF installed. That's gonna be a problem.");
 }
 
-$layout = get_field("layout");
 if (is_home() || is_archive()) {;
-	$main_id = get_queried_object()->term_id;
+	$main_id = get_queried_object_id();
 } else {
 	$main_id = get_the_ID();
 }
+
+$layout = get_field("layout",$main_id);
 if (have_rows('block', $main_id)) {
 	$page_layout_id = $main_id;
 } else  {

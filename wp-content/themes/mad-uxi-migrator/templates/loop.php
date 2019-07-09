@@ -26,7 +26,7 @@
             <?php //get_template_part('templates/post-meta'); ?>
           </header>
           <div class="post-description clearfix">
-            <?php var_dump(get_the_excerpt()); ?>
+            <?php the_excerpt(); ?>
           </div>
         </div>  
       </article>
