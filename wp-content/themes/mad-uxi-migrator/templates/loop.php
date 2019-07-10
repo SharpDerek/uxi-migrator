@@ -12,7 +12,7 @@
         <?php if ( has_post_thumbnail()) : ?>
           <div class="post-image post-image-left">
               <a class="post-image-link" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                <?php the_post_thumbnail('thumbnail', 'itemprop=image'); ?>
+                <?php the_post_thumbnail('mad_featured_archive', 'itemprop=image'); ?>
               </a>
           </div>
         <?php endif; ?>
