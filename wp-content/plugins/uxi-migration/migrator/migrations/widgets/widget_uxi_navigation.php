@@ -21,4 +21,4 @@ array_push($fields,array(
 	'widget_uxi_menu' => $menu,
 	'menu_classes' => $menu_class
 ));
-uxi_print('<i>'.$widget_layout.'</i> created. id: "'.$id.'", class: "'.$class.'", menu: "'.$menu.'"',"sub");
+uxi_print('<i>'.$widget_layout.'</i> created. id: "'.$id.'", class: "'.$class.'", menu: "'.$menu.'"');

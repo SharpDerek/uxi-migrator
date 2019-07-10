@@ -34,6 +34,11 @@ if ($response) {
 			}
 			uxi_do_layout($dom, $post_id, $slug);
 			uxi_do_layout_assign($dom, $post_id, $slug);
+			if ($post_id) {
+				uxi_print("Migrated Post ".$post_id." (".$slug.")","close");
+			} else {
+				uxi_print("Migrated ".$slug,"close");
+			}
 		} else  {
 			//uxi_do_layout($dom);
 			//uxi_delete_layouts();

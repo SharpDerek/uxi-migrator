@@ -19,7 +19,7 @@ function uxi_do_rows($dom, $xpath, $query, $layout, $nested, $fields = array() )
 						'id' => $id,
 						'class' => $class
 					));
-					uxi_print('<i>'.$layout.'</i> created. id: "'.$id.'", class: "'.$class.'"',"sub");
+					uxi_print('<i>'.$layout.'</i> created. id: "'.$id.'", class: "'.$class.'"',"open");
 				}
 
 				switch($layout) {
@@ -99,7 +99,7 @@ function uxi_do_rows($dom, $xpath, $query, $layout, $nested, $fields = array() )
 					array_push($fields,array(
 						'acf_fc_layout' => $layout.'_close'
 					));
-					uxi_print('<i>'.$layout.'_close</i> created.');
+					uxi_print('<i>'.$layout.'_close</i> created.',"close");
 				}
 			}
 	}

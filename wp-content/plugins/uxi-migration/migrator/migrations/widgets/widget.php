@@ -24,4 +24,4 @@ array_push($fields,array(
 	'class' => $class,
 	'content' => uxi_relative_asset_url($content)
 ));
-uxi_print('<i>'.$layout.'</i> created. id: "'.$id.'", class: "'.$class.'"',"sub");
+uxi_print('<i>'.$layout.'</i> created. id: "'.$id.'", class: "'.$class.'"');
