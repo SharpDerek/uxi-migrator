@@ -1,9 +1,7 @@
 <?php /* Start loop */ ?>
 <?php while (have_posts()) : the_post(); ?>
 
-<?php mad_post_before(); ?>
   <article <?php post_class() ?> itemscope itemtype="http://schema.org/BlogPosting">
-    <?php mad_post_inside_before(); ?>
     
     <header class="post-header">
       <div class="page-title">
@@ -39,9 +37,7 @@
     
     <?php comments_template('/templates/comments.php'); ?>
     
-    <?php mad_post_inside_after(); ?>
   </article>
-<?php mad_post_after(); ?>
 
 <?php /* End loop */ ?>
 <?php endwhile; wp_reset_query(); ?>

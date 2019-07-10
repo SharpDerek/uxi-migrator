@@ -20,6 +20,8 @@
 					<div class="posts-archive-list">
 						<?php get_template_part('templates/loop'); ?>
 					</div>
+				<?php elseif (is_single()): ?>
+					<?php get_template_part('templates/loop','single'); ?>
 				<?php else: ?>
 					<div class="editor-content">
 						<?php echo apply_filters('the_content', $post->post_content); ?>
