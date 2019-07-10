@@ -26,7 +26,7 @@
             <?php //get_template_part('templates/post-meta'); ?>
           </header>
           <div class="post-description clearfix">
-            <?php the_excerpt(); ?>
+            <?php mad_excerpt(); ?>
           </div>
         </div>  
       </article>
@@ -34,7 +34,7 @@
 
     <?php endwhile; wp_reset_query(); ?>
 
-    <?php mad_posts_pagination(); ?>
+    <?php //mad_posts_pagination(); ?>
   </ol>
 
 <?php endif; ?>
