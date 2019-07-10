@@ -1,6 +1,5 @@
 <?php
 
-//require_once get_template_directory()   . '/inc/activation.php';     // theme activation
 require_once get_stylesheet_directory() . '/inc/uxi-functions.php';  // UXI-specific functions
 require_once get_stylesheet_directory() . '/inc/options.php';        // ACF Options Pages
 require_once get_stylesheet_directory() . '/inc/config.php';         // theme configuration
@@ -10,7 +9,6 @@ require_once get_template_directory()   . '/inc/shortcodes.php';     // shortcod
 require_once get_template_directory()   . '/inc/posttypes.php';      // post types
 require_once get_template_directory()   . '/inc/template-tags.php';  // template tags
 require_once get_template_directory()   . '/inc/actions.php';        // actions
-require_once get_template_directory()   . '/inc/hooks.php';          // hooks
 require_once get_template_directory()   . '/inc/filters.php';        // filters
 require_once get_stylesheet_directory() . '/inc/custom.php';         // custom functions
 require_once get_stylesheet_directory() . '/inc/enqueue.php';        // scripts and styles enqueue
@@ -59,5 +57,3 @@ add_theme_support('menus');
 //     'footer_navigation' => 'Footer Navigation'
 //   )
 // );
-
-?>

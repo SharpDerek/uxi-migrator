@@ -55,7 +55,7 @@ function mad_short_title($limit = 40){
 function mad_default_excerpt_length($length) {
   return 500;
 }
-add_filter('excerpt_length', 'mad_default_excerpt_length');
+//add_filter('excerpt_length', 'mad_default_excerpt_length');
 
 /**
 * Begin Custom Multiple Excerpts Lengths Thanks to Adam Nowak @link code.hyperspatial.com/
@@ -138,5 +138,3 @@ function mad_posts_nav() {
   if ($wp_query->max_num_pages > 1)
     echo '<nav class="pagination posts-nav clearfix">'. paginate_links( $pagination ) .'</nav>';
 };
-
-?>

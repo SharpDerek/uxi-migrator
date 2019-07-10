@@ -11,5 +11,3 @@ if(LOGIN_LOGO_URL) {
   }
   add_filter('login_headerurl', 'mad_login_logo_url');
 }
-
-?>
