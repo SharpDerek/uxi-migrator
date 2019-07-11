@@ -15,5 +15,3 @@ if(CUSTOM_ADMIN_BAR_LOGO) {
 }
 
 add_action('mad_posts_pagination', 'mad_posts_nav');
-
-?>

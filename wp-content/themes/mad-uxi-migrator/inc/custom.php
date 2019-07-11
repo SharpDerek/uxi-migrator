@@ -10,5 +10,3 @@
  * set to return false to disable.
 */ 
 // add_filter('gform_tabindex_1', create_function('', 'return 100;'));
-
-?>

@@ -1,51 +1,5 @@
 <?php
 
-function mad_widgets_init() {
-
-  register_sidebar(array(
-    'name' => __('Sidebar', 'mad'),
-    'id' => 'sidebar-widget-area',
-    'before_widget' => '<section class="widget %1$s %2$s"><div class="widget-inner">',
-    'after_widget' => '</div></section>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ));
-  register_sidebar(array(
-    'name' => __('Footer1', 'mad'),
-    'id' => 'footer-widget-area-1', 
-    'before_widget' => '<section class="footer-widget %1$s %2$s"><div class="footer-widget-inner">',
-    'after_widget' => '</div></section>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ));
-  register_sidebar(array(
-    'name' => __('Footer2', 'mad'),
-    'id' => 'footer-widget-area-2', 
-    'before_widget' => '<section class="footer-widget %1$s %2$s"><div class="footer-widget-inner">',
-    'after_widget' => '</div></section>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ));
-  register_sidebar(array(
-    'name' => __('Footer3', 'mad'),
-    'id' => 'footer-widget-area-3', 
-    'before_widget' => '<section class="footer-widget %1$s %2$s"><div class="footer-widget-inner">',
-    'after_widget' => '</div></section>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ));
-  register_sidebar(array(
-    'name' => __('Footer4', 'mad'),
-    'id' => 'footer-widget-area-4', 
-    'before_widget' => '<section class="footer-widget %1$s %2$s"><div class="footer-widget-inner">',
-    'after_widget' => '</div></section>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ));
-
-}
-add_action('widgets_init', 'mad_widgets_init');
-
 /**
  * Example vCard widget
  */
@@ -153,5 +107,3 @@ class Roots_Vcard_Widget extends WP_Widget {
 
 // register madCategoryWidget widget
 add_action( 'widgets_init', create_function( '', 'register_widget( "Roots_Vcard_Widget" );' ) );
-
-?>

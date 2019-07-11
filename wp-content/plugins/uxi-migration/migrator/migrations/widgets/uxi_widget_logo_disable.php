@@ -25,4 +25,4 @@ if (!$uxi_logo['logo_fallback_url']) {
 	uxi_print("<i>Logo Fallback URL already set.</i>","sub-sub");
 }
 
-uxi_print('<i>'.$widget_layout.'</i> created. id: "'.$id.'", class: "'.$class.'"',"sub");
+uxi_print('<i>'.$widget_layout.'</i> created. id: "'.$id.'", class: "'.$class.'"');

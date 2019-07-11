@@ -1,6 +1,6 @@
 <?php
 
-function uxi_do_layout_assign($dom, $page_id) {
+function uxi_do_layout_assign($dom, $post_id = false, $slug = false) {
 
 	$xpath = new DOMXpath($dom);
 
@@ -21,7 +21,11 @@ function uxi_do_layout_assign($dom, $page_id) {
 				$layout_assign[$layout.'_layout'] = array($layout_id);
 			}
 		}
-		update_field('layout',$layout_assign,$page_id);
+		if ($post_id) {
+			update_field('layout',$layout_assign,$post_id);
+		} else {
+			
+		}
 		return true;
 	}
 	return false;

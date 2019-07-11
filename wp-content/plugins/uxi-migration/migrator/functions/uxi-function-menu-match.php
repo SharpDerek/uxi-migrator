@@ -2,6 +2,8 @@
 
 function uxi_menu_match($dom) {
 
+	uxi_print("Begin Menu Match","open");
+
 	if (!function_exists('uxi_get_all_wordpress_menus')) {
 		function uxi_get_all_wordpress_menus(){
 			$menus = array();
@@ -30,6 +32,8 @@ function uxi_menu_match($dom) {
 			if ($menu_item->hasAttributes()) {
 				$url = $menu_item->attributes->getNamedItem('href')->value;
 				$title = html_entity_decode($menu_item->nodeValue);
+				uxi_print("URL:".uxi_site_url($url)." == ". $menu[$index]['url']);
+				uxi_print("TITLE:".$title." == ". $menu[$index]['title']);
 				if (uxi_site_url($url) == $menu[$index]['url'] && $title == $menu[$index]['title']) {
 					$match++;
 				} else {
@@ -40,9 +44,11 @@ function uxi_menu_match($dom) {
 			$index++;
 		}
 		if ($match == count($menu) && count($menu) == $query->length) {
+			uxi_print("End Menu Match. Matching Menu Found","close");
 			return $menu_name;
 		}
 	}
+	uxi_print("End Menu Match. No Match Found","close");
 	return "";
 
 }
