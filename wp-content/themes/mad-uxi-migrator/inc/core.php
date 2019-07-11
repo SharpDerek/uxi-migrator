@@ -28,3 +28,19 @@ function mad_excerpt() {
 	$excerpt = wp_trim_words($post->post_content, 53, "&hellip;".$readmore);
 	echo $excerpt;
 }
+
+function mad_post_class($classes, $class, $post_id) {
+	if (get_post_type($post_id) !== 'page') {
+		$classes[] = "post-archive";
+	}
+	return $classes;
+}
+
+add_filter('post_class','mad_post_class', 10, 3);
+
+
+add_image_size ('mad_gallery', get_option('mad_gallery_size_w'), get_option('mad_gallery_size_h'), get_option('mad_gallery_crop'));
+add_image_size ('mad_slideshow', get_option('mad_slideshow_size_w'), get_option('mad_slideshow_size_h'), get_option('mad_slideshow_crop'));
+add_image_size ('mad_featured_archive', get_option('mad_featured_archive_size_w'), get_option('mad_featured_archive_size_h'), get_option('mad_featured_archive_crop'));
+add_image_size ('mad_featured_single', get_option('mad_featured_single_size_w'), get_option('mad_featured_single_size_h'), get_option('mad_featured_single_crop'));
+add_image_size ('mad_featured_page', get_option('mad_featured_page_size_w'), get_option('mad_featured_page_size_h'), get_option('mad_featured_page_crop'));

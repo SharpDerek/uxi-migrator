@@ -34,7 +34,7 @@
 
     <?php endwhile; wp_reset_query(); ?>
 
-    <?php //mad_posts_pagination(); ?>
+    <?php mad_posts_nav(); ?>
   </ol>
 
 <?php endif; ?>

@@ -49,7 +49,6 @@ function mad_register_image_settings() {
 			"type" => "boolean"
 		)
 	);
-	add_image_size ('mad_gallery', get_option('mad_gallery_size_w'), get_option('mad_gallery_size_h'), get_option('mad_gallery_crop'));
 
 	register_setting(
 		"media",
@@ -74,7 +73,6 @@ function mad_register_image_settings() {
 			"type" => "boolean"
 		)
 	);
-	add_image_size ('mad_slideshow', get_option('mad_slideshow_size_w'), get_option('mad_slideshow_size_h'), get_option('mad_slideshow_crop'));
 
 	register_setting(
 		"media",
@@ -99,7 +97,6 @@ function mad_register_image_settings() {
 			"type" => "boolean"
 		)
 	);
-	add_image_size ('mad_featured_archive', get_option('mad_featured_archive_size_w'), get_option('mad_featured_archive_size_h'), get_option('mad_featured_archive_crop'));
 
 	register_setting(
 		"media",
@@ -124,7 +121,6 @@ function mad_register_image_settings() {
 			"type" => "boolean"
 		)
 	);
-	add_image_size ('mad_featured_single', get_option('mad_featured_single_size_w'), get_option('mad_featured_single_size_h'), get_option('mad_featured_single_crop'));
 
 	register_setting(
 		"media",
@@ -149,7 +145,6 @@ function mad_register_image_settings() {
 			"type" => "boolean"
 		)
 	);
-	add_image_size ('mad_featured_page', get_option('mad_featured_page_size_w'), get_option('mad_featured_page_size_h'), get_option('mad_featured_page_crop'));
 
 }
 

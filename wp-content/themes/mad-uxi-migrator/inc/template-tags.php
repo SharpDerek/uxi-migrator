@@ -136,5 +136,5 @@ function mad_posts_nav() {
   if( $wp_rewrite->using_permalinks() )
     $pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg( 's', get_pagenum_link( 1 ) ) ) . 'page/%#%/', 'paged' );
   if ($wp_query->max_num_pages > 1)
-    echo '<nav class="pagination posts-nav clearfix">'. paginate_links( $pagination ) .'</nav>';
+    echo '<nav class="archive-pagination" role="navigation">'. paginate_links( $pagination ) .'</nav>';
 };
