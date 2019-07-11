@@ -1,6 +1,6 @@
 <?php
 
-function uxi_do_layout($dom) {
+function uxi_do_layout($dom, $post_id = false, $slug = false) {
 	if (function_exists('update_field')) {
 
 		$xpath = new DOMXpath($dom);
@@ -15,10 +15,10 @@ function uxi_do_layout($dom) {
 
 			$row_start = '//*[@'.$template.']//*[@data-layout]';
 
-			$uxi_template_id = uxi_do_create_layout_post($xpath, $row_start,$template);
+			$uxi_template_id = uxi_do_create_layout_post($xpath, $row_start,$template, $slug);
 
 			if ($uxi_template_id) {
-				uxi_print('Starting '.$template.' template.');
+				uxi_print('Starting '.$template.' template.','open');
 				update_field(
 					'block',
 					uxi_do_rows(
@@ -30,7 +30,7 @@ function uxi_do_layout($dom) {
 					),
 					$uxi_template_id
 				);
-				uxi_print('New '.$template.' template id: "'.$uxi_template_id.'" created.');
+				uxi_print('New '.$template.' template id: "'.$uxi_template_id.'" created.<br>','close');
 			} else {
 				uxi_print('Matching '.$template.' template already exists. No need to overwrite.');
 			}

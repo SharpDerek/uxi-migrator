@@ -56,12 +56,18 @@
    						display:table-cell;
    						width:0;
    					}
+   					.message-block {
+   						padding-left:20px;
+   					}
    				</style>
 
    				<div id="migrator-progress-wrap">
    					<div id="migrator-progress-inner">
    						<span id="migrator-progress-percent"></span>
    					</div>
+   				</div>
+
+   				<div id="migrator-progress-log">
    				</div>
 			
 			<?php
@@ -115,12 +121,4 @@
 	<?php endif; ?>
 	</div>
 </div>
-<style>
-.migrator-progress .sub {
-	padding-left:20px;
-}
-.migrator-progress .sub-sub {
-	padding-left:40px;
-}
-</style>
 <?php 

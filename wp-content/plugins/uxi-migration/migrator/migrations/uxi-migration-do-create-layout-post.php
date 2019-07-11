@@ -1,6 +1,6 @@
 <?php
 
-function uxi_do_create_layout_post($xpath, $query, $section) {
+function uxi_do_create_layout_post($xpath, $query, $section, $slug) {
 	if (function_exists('get_field')) {
 		$first_layout = $xpath->query($query)[0];
 		$data_layout = 0;
@@ -14,7 +14,7 @@ function uxi_do_create_layout_post($xpath, $query, $section) {
 					array (
 						'post_status' => 'publish',
 						'post_type' => $section.'-layout',
-						'post_title' => $section.' layout '.$data_layout,
+						'post_title' => $section.' layout '.$data_layout. ' (retrieved from "'.$slug.'")',
 						'meta_input' => array (
 							'uxi_data_layout' => $data_layout,
 						)

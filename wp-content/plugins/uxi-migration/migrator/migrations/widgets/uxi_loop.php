@@ -19,4 +19,4 @@ array_push($fields,array(
 	'class' => $class,
 	'heading_tag' => $heading_tag
 ));
-uxi_print('<i>'.$widget_layout.'</i> created. id: "'.$id.'", class: "'.$class.'"',"sub");
+uxi_print('<i>'.$widget_layout.'</i> created. id: "'.$id.'", class: "'.$class.'"');

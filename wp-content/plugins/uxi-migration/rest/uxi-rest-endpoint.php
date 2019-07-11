@@ -2,13 +2,17 @@
 
 function uxi_rest_endpoint(WP_REST_Request $request){
 
-  $GLOBALS['uxi_migrator-progress'] = "";
+  $GLOBALS['uxi_migrator_progress'] = "";
 
-  //if ( check_ajax_referer('wp_rest', '_wpnonce') ){
-  	$page_id = $request['page_id'];
-    $slug = get_post($page_id)->post_name;
+  if ( check_ajax_referer('wp_rest', '_wpnonce') ){
+    $post_id = $request['post_id'];
+    $slug = $request['slug'];
+    if (!$slug) {
+      $slug = get_post_field('post_name',$post_id);
+    }
     $uxi_url = $request['uxi_url'].$slug;
 
+    define('UXI_URL',trailingslashit($request['uxi_url']));
 
     require(UXI_MIGRATOR_PATH.'migrator/functions/uxi-functions-loader.php');
 
@@ -16,9 +20,9 @@ function uxi_rest_endpoint(WP_REST_Request $request){
 
     require(UXI_MIGRATOR_PATH.'migrator/migrations/uxi-migrations-loader.php');
 
-    return $GLOBALS['uxi_migrator-progress'];
+    return $GLOBALS['uxi_migrator_progress'];
 
-  //}
+  }
   return false;
 }
 

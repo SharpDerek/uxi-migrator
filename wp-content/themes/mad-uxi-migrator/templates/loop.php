@@ -12,7 +12,7 @@
         <?php if ( has_post_thumbnail()) : ?>
           <div class="post-image post-image-left">
               <a class="post-image-link" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                <?php the_post_thumbnail('thumbnail', 'itemprop=image'); ?>
+                <?php the_post_thumbnail('mad_featured_archive', 'itemprop=image'); ?>
               </a>
           </div>
         <?php endif; ?>
@@ -26,7 +26,7 @@
             <?php //get_template_part('templates/post-meta'); ?>
           </header>
           <div class="post-description clearfix">
-            <?php var_dump(get_the_excerpt()); ?>
+            <?php mad_excerpt(); ?>
           </div>
         </div>  
       </article>
@@ -34,7 +34,7 @@
 
     <?php endwhile; wp_reset_query(); ?>
 
-    <?php mad_posts_pagination(); ?>
+    <?php mad_posts_nav(); ?>
   </ol>
 
 <?php endif; ?>
