@@ -27,7 +27,7 @@ function uxi_curl($input, $request = "GET") {
 	curl_close($curl);
 
 	if ($err) {
-	  echo "cURL Error #:" . $err;
+	  return "cURL Error #:" . $err;
 	  return false;
 	} else {
 	  return $response;
