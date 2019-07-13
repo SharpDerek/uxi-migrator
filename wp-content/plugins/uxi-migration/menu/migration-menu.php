@@ -96,7 +96,7 @@
 				);
 				$posts_query = new WP_Query($args);
 				if ($posts_query->have_posts()) {
-					echo "var postArray=[";
+					echo "var postArray=[299,";
 					while($posts_query->have_posts()) {
 						$posts_query->the_post();
 						echo get_the_ID();

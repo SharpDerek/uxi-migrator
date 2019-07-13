@@ -6,7 +6,13 @@ if (!UXI_ITEM) {
 
 $xpath = new DOMXpath($dom);
 
-$content = uxi_gravityform_shortcode($dom->saveHTML());
+$content = "";
+
+foreach($xpath->query($element->getNodePath().'//*[@class="content"]/*') as $child) {
+	$content.= $dom->saveHTML($child);
+}
+
+$content = uxi_gravityform_shortcode($content);
 
 array_push($fields,array(
 	'acf_fc_layout' => $layout,
