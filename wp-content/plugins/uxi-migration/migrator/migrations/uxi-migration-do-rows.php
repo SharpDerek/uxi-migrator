@@ -76,6 +76,9 @@ function uxi_do_rows($dom, $xpath, $query, $layout, $nested, $fields = array() )
 						break;
 					case 'widget':
 						$widget_layout = $element->attributes->getNamedItem('uxi-widget')->value;
+						if ($widget_layout == 'widget_uxi_navigation') {
+							$is_custom_menu = false;
+						}
 						$widget_file = uxi_get_widget(
 								$widget_layout,
 								'widget'
