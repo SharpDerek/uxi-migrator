@@ -403,6 +403,33 @@
                             "placeholder": ""
                         },
                         {
+                            "key": "field_5d2caf36cbff4",
+                            "label": "Menu Style",
+                            "name": "menu_style",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "header": "Header",
+                                "custom": "Custom"
+                            },
+                            "default_value": [
+                                "custom"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
                             "key": "field_5d1c2c7094478",
                             "label": "Menu Classes",
                             "name": "menu_classes",
@@ -416,6 +443,60 @@
                                 "id": ""
                             },
                             "default_value": "nav",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5d2cb4395193e",
+                            "label": "Menu Title",
+                            "name": "menu_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5d2caf36cbff4",
+                                        "operator": "==",
+                                        "value": "custom"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5d2cb4bff8b4f",
+                            "label": "Menu Title Classes",
+                            "name": "menu_title_classes",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5d2caf36cbff4",
+                                        "operator": "==",
+                                        "value": "custom"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
@@ -722,5 +803,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1562127622
+    "modified": 1563210957
 }
