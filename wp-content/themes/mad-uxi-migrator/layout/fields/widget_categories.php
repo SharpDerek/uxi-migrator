@@ -3,7 +3,7 @@
 	$id = get_sub_field('id');
 	$title = get_sub_field('title');
 	$title_class = get_sub_field('title_class');
-	$count = get_sub_field('count');
+	$count = get_sub_field('show_count');
 	$hierarchical = get_sub_field('hierarchical');
 	$dropdown = get_sub_field('dropdown');
 ?>
@@ -18,7 +18,7 @@
 				'title' => $title,
 			),
 			array (
-				'after_widget' => '<h2 class="'.$title_class.'">'
+				'before_title' => '<h2 class="'.$title_class.'">'
 			)
 		); ?>
 	</div>

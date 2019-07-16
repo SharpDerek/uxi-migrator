@@ -59,6 +59,11 @@
    					.message-block {
    						padding-left:20px;
    					}
+   					#migrator-progress-log {
+   						max-height:500px;
+   						margin-top:30px;
+   						overflow:auto;
+   					}
    				</style>
 
    				<div id="migrator-progress-wrap">

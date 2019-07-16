@@ -36,6 +36,7 @@ jQuery(document).ready(function($) {
 			var proglog = $('#migrator-progress-log');
 			if (typeof proglog !== "undefined") {
 				proglog.html(proglog.html() + message + "<br>");
+				proglog.scrollTop(proglog.prop('scrollHeight'));
 			}
 		}
 	}

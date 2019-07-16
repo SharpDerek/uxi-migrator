@@ -12,7 +12,7 @@ foreach ($xpath->query('//*[@class="content"]/*[not(self::ul)]') as $title_eleme
 }
 
 
-$show_count = $xpath->query('//*[@class="content"]//li[contains(text(),"(")]')->length > 0;
+$show_count = $xpath->query('//*[@class="content"]//li[text()]')->length > 0;
 
 $hierarchical = $xpath->query('//*[@class="content"]//ul//ul')->length > 0;
 
