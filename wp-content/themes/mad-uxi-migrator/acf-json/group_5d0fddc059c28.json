@@ -137,9 +137,9 @@
                 },
                 {
                     "key": "field_5d1043d8f6705",
-                    "label": "Mobile Drawer Left Content",
-                    "name": "mobile_drawer_left_content",
-                    "type": "wysiwyg",
+                    "label": "Mobile Drawer Menu",
+                    "name": "widget_uxi_menu",
+                    "type": "select",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -148,11 +148,18 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
+                    "choices": {
+                        "footer-navigation": "Footer Navigation",
+                        "header-navigation": "Header Navigation",
+                        "services-menu": "Services Menu"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
                 },
                 {
                     "key": "field_5d1043ebf6706",
@@ -209,5 +216,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1561429278
+    "modified": 1563309521
 }

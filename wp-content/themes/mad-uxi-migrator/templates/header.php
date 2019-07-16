@@ -10,7 +10,7 @@ require(get_stylesheet_directory().'/layout/layout.php'); ?>
 	<?php
 		while (have_rows('mobile_navigation','option')): the_row();
 		$mobile_header = get_sub_field('header_content',false);
-		$mobile_left_drawer = get_sub_field('mobile_drawer_left_content',false);
+		$mobile_left_drawer = get_sub_field('widget_uxi_menu',false);
 		$mobile_right_drawer = get_sub_field('mobile_drawer_right_content',false);
 		endwhile;
 	?>
@@ -19,7 +19,15 @@ require(get_stylesheet_directory().'/layout/layout.php'); ?>
 	</div>
 	<?php if ($mobile_left_drawer): ?>
 		<div class="mobile-drawer mobile-drawer-left">
-			<?php echo $mobile_left_drawer; ?>
+			<nav role="navigation">
+				<h2 class="sr-only">Site Mobile Navigation</h2>
+				<?php
+					wp_nav_menu(array (
+						'menu' => $mobile_left_drawer,
+						'menu_class' => 'mobile-nav',
+						'walker' => new UXi_Mobile_Nav_Walker()
+					));
+				?>
 		</div>
 	<?php endif; ?>
 	<?php if ($mobile_right_drawer): ?>
