@@ -28,7 +28,9 @@ function uxi_do_mobile_header($dom) {
 						$field[$element] .= 
 							uxi_relative_asset_url(
 								uxi_relative_url(
-									$dom->saveHTML($item)
+									uxi_gravityform_shortcode(
+										$dom->saveHTML($item)
+									)
 								)
 							);
 					}
