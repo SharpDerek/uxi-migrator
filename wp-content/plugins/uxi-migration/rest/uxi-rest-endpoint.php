@@ -12,6 +12,10 @@ function uxi_rest_endpoint(WP_REST_Request $request){
     }
     $uxi_url = $request['uxi_url'].$slug;
 
+    $do_assets = $request['do_assets'];
+    $do_scripts = $request['do_scripts'];
+    $do_mobile = $request['do_mobile'];
+
     define('UXI_URL',trailingslashit($request['uxi_url']));
 
     require(UXI_MIGRATOR_PATH.'migrator/functions/uxi-functions-loader.php');
