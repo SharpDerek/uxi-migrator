@@ -2,20 +2,47 @@
 
 	function hit_endpoint(index, subindex) {
 		if (index < Object.keys(postObj).length) {
-			if (subindex < postObj[Object.keys(postObj)[index]].length) {
-				$.ajax({
-					type: "POST",
-					url: "/wp-json/uxi-migrator/page-scraper",
-					data: {
+			var ajaxData = {};
+			switch(Object.keys(postObj)[index]) {
+				case 'assets':
+					ajaxData = {
+						'_wpnonce': nonce,
+						'do_assets': 1,
+						'uxi_url': uxi_url
+					}
+				break;
+				case 'scripts':
+					ajaxData = {
+						'_wpnonce': nonce,
+						'do_scripts': 1,
+						'uxi_url': uxi_url
+					}
+				break;
+				case 'mobile':
+					ajaxData = {
+						'_wpnonce': nonce,
+						'do_mobile': 1,
+						'uxi_url': uxi_url
+					}
+				break;
+				default:
+					ajaxData = {
 						'_wpnonce': nonce,
 						'post_id': postObj[Object.keys(postObj)[index]][subindex],
 						'uxi_url': uxi_url
 					}
+				break;
+			}
+			if (subindex < postObj[Object.keys(postObj)[index]].length) {
+				$.ajax({
+					type: "POST",
+					url: "/wp-json/uxi-migrator/page-scraper",
+					data: ajaxData
 
 				})
 				.done(function(response) {
 					hit_endpoint(index, ++subindex);
-					updateProgress(Object.keys(postObj)[index], subindex, postObj[Object.keys(postObj)[index]].length);
+					updateProgress(Object.keys(postObj).length, index + 1, Object.keys(postObj)[index], subindex, postObj[Object.keys(postObj)[index]].length);
 					updateProgressLog(response);
 				})
 				.fail(function() {
@@ -32,7 +59,7 @@
 		return '<em>Something went wrong. Skipping this post.</em><br>';
 	}
 
-	function updateProgress(type, curvalue, maxvalue) {
+	function updateProgress(totalsteps, curstep, type, curvalue, maxvalue) {
 		var progwrap = $('#migrator-progress-wrap');
 		if (typeof progwrap !== "undefined") {
 			var proginner = progwrap.find("#migrator-progress-inner");
@@ -40,7 +67,11 @@
 			var value = Math.floor(curvalue/maxvalue * 100);
 
 			proginner.css("width",value + "%");
-			progpercent.text(type+"s: " + value + "%");
+			if (totalsteps/curstep == 1 && maxvalue/curvalue == 1) {
+				progpercent.html("Migration complete!!");
+			} else {
+				progpercent.html(type + ((type == 'assets' || type == 'mobile' || type == 'scripts') ? ": " : "s: ") + value + "%<br>Step "+curstep+"/"+totalsteps);
+			}
 		}
 	}
 
@@ -48,7 +79,9 @@
 		var proglog = $('#migrator-progress-log');
 		if (typeof proglog !== "undefined") {
 			proglog.html(proglog.html() + message + "<br>");
-			proglog.scrollTop(proglog.prop('scrollHeight'));
+			if (!proglog.is(":hover") && !proglog.is(":focus")) {
+				proglog.scrollTop(proglog.prop('scrollHeight'));
+			}
 		}
 	}
 

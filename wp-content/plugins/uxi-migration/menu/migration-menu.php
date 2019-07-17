@@ -21,6 +21,8 @@
 		     <p>
 				<input type="checkbox" id="migrate-assets" name="migrations[]" value="assets" checked>
 				<label for="migrate-assets">Assets</label><br>
+				<input type="checkbox" id="migrate-scripts" name="migrations[]" value="scripts" checked>
+				<label for="migrate-scripts">Scripts</label><br>
 				<input type="checkbox" id="migrate-mobile" name="migrations[]" value="mobile" checked>
 				<label for="migrate-mobile">Mobile</label><br>
 				<input type="checkbox" id="migrate-pages" name="migrations[post_types][]" value="page" checked>
@@ -37,8 +39,6 @@
 		</div>
 
 		<?php if (isset($_POST['uxi-url'])) { ?>
-
-		<?php var_dump($_POST['migrations']); ?>
 
    			<div class="migrator-progress">
 
@@ -61,7 +61,6 @@
    						width:0;
    						height:100%;
    						background: #F37530;
-   						border-radius:50px;
    						text-align:center;
    						overflow:hidden;
    						display:table;
@@ -114,42 +113,41 @@
 
 				echo "var uxi_url = '".trailingslashit($_POST['uxi-url'])."';\n";
 
-				echo "var singleMigrations = [";
-				echo (in_array("assets", $_POST['migrations'])) ? '"assets",' : '' ;
-				echo (in_array("mobile", $_POST['migrations'])) ? '"mobile"' : '' ;
-				echo "];\n";
+				echo "var postObj={\n";
+					echo (in_array("assets", $_POST['migrations'])) ? '"assets":[true],'."\n" : '' ;
+					echo (in_array("scripts", $_POST['migrations'])) ? '"scripts":[true],'."\n" : '' ;
+					echo (in_array("mobile", $_POST['migrations'])) ? '"mobile":[true],'."\n" : '' ;
 
-				if (array_key_exists('post_types',$_POST['migrations'])) {
-					echo "var postObj={";
-					foreach($_POST['migrations']['post_types'] as $post_type) {
-						$post_query = new WP_Query(
-							array(
-								'post_type' => $post_type,
-								'posts_per_page' => -1
-							)
-						);
-						if ($post_query->have_posts()) {
-							echo '"'.$post_type.'":[';
-							while($post_query->have_posts()) {
-								$post_query->the_post();
-								echo get_the_ID();
-								echo ",";
+					if (array_key_exists('post_types',$_POST['migrations'])) {
+						foreach($_POST['migrations']['post_types'] as $post_type) {
+							$post_query = new WP_Query(
+								array(
+									'post_type' => $post_type,
+									'posts_per_page' => -1
+								)
+							);
+							if ($post_query->have_posts()) {
+								echo '"'.$post_type.'":[';
+								while($post_query->have_posts()) {
+									$post_query->the_post();
+									echo get_the_ID();
+									echo ",";
+								}
+								echo "],\n";
 							}
-							echo "],\n";
-						}
-						wp_reset_postdata();
+							wp_reset_postdata();
 
+						}
 					}
-					echo "};\n";
-				}
+				echo "};\n";
 
 				echo "var nonce = '".$nonce."';\n </script>";
 
-				$response = uxi_curl($_POST['uxi-url']);
+				//$response = uxi_curl($_POST['uxi-url']);
 
-				define('UXI_URL',trailingslashit($_POST['uxi-url']));
+				//define('UXI_URL',trailingslashit($_POST['uxi-url']));
 
-				require(UXI_MIGRATOR_PATH.'migrator/migrations/uxi-migrations-loader.php');
+				//require(UXI_MIGRATOR_PATH.'migrator/migrations/uxi-migrations-loader.php');
 				
 				?>
 
