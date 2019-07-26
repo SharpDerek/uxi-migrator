@@ -5,6 +5,8 @@
 
 	<?php
 
+	require_once(plugin_dir_path(__FILE__).'migration-checklist.php');
+
 	if (!UXI_THEME_INSTALLED): ?>
 
 	<p>This migrator will not work unless the UXi Migration theme is installed</p>
