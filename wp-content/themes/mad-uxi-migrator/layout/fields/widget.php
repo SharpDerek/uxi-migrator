@@ -5,6 +5,6 @@
 ?>
 <div uxi-widget id="<?php echo $id; ?>" class="<?php echo $class; ?>">
 	<div class="content">
-		<?php echo $content; ?>
+		<?php echo do_shortcode($content); ?>
 	</div>
 </div>
