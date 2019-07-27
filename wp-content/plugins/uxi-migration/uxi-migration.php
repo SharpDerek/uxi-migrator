@@ -30,8 +30,6 @@ function uxi_menu_page() {
 	 'dashicons-migrate',
 	 1
 	);
-
-	require_once(UXI_MIGRATOR_PATH.'scripts/uxi-script-enqueue.php');
 }
 
 add_action('admin_menu','uxi_menu_page');
@@ -40,3 +38,23 @@ function uxi_rest() {
 	require(UXI_MIGRATOR_PATH.'rest/uxi-rest-endpoint.php');
 }
 add_action('plugins_loaded','uxi_rest');
+
+
+function uxi_migrator_admin_styles() {
+	wp_enqueue_style(
+		'uxi_migrator_css',
+		plugin_dir_url(__FILE__).'assets/css/uxi-migration.css'
+	);
+}
+add_action('admin_enqueue_scripts', 'uxi_migrator_admin_styles');
+
+function uxi_migrator_admin_scripts() {
+	wp_enqueue_script(
+		'uxi-migrator-admin-js',
+		plugin_dir_url(__FILE__).'assets/js/uxi-migration.js',
+		array('jquery'),
+		false,
+		true
+	);
+}
+add_action('admin_enqueue_scripts', 'uxi_migrator_admin_scripts');
