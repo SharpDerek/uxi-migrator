@@ -27,7 +27,8 @@
 						<h1 class="page-header-title <?php echo $heading_tag; ?>" id="main-title"><?php echo $post->post_title; ?></h1>
 					</div>
 					<div class="editor-content">
-						<?php echo apply_filters('the_content', $post->post_content); ?>
+						<?php //echo apply_filters('the_content', $post->post_content); ?>
+						<?php the_content(); ?>
 					</div>
 				<?php endif; ?>
 			</div>

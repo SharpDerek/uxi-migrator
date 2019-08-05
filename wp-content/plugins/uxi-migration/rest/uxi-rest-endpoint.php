@@ -6,11 +6,18 @@ function uxi_rest_endpoint(WP_REST_Request $request){
 
   if ( check_ajax_referer('wp_rest', '_wpnonce') ){
     $post_id = $request['post_id'];
+
     $slug = $request['slug'];
     if (!$slug) {
       $slug = get_post_field('post_name',$post_id);
     }
-    $uxi_url = $request['uxi_url'].$slug;
+    $uxi_url = $request['uxi_url'].$slug; 
+
+    // if ($post_id) {
+    //   if (get_post($post_id)->post_password !== "") {
+    //     $uxi_url .= "?password=".get_post($post_id)->post_password;
+    //   }
+    // }
 
     $do_assets = $request['do_assets'];
     $do_scripts = $request['do_scripts'];
