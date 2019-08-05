@@ -20,17 +20,17 @@ function mad_register_post_types(){
 	);
 	$posttype_args = array(
 		'labels' => $posttype_labels,
-		'public' => false,
-		'publicly_queryable' => false,
-		'exclude_from_search' => true,
+		'public' => true,
+		'publicly_queryable' => true,
+		'exclude_from_search' => false,
 		'show_ui' => true,
 		'show_in_menu' => true,
 		'menu_icon'   => 'dashicons-editor-quote',
 		'query_var' => true,
-		'rewrite' => array( 'slug' => 'mad360_testimonial' ),
+		'rewrite' => array( 'slug' => 'testimonials' ),
 		'capability_type' => 'page',
 		'has_archive' => true,
-		'hierarchical' => false,
+		'hierarchical' => true,
 		'menu_position' => 20,
 		'supports' => array( 'title', 'page-attributes', 'editor', 'thumbnail' )
 	);

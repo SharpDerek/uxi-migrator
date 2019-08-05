@@ -26,3 +26,9 @@ function mad_define_constants($constants){
 }
 
 if(ERROR_DISPLAY){ error_reporting(E_ALL ^ E_NOTICE); ini_set('display_errors','1'); }
+
+function mad_body_classes($classes) {
+  $classes[] = 'lazyload';
+  return $classes;
+}
+add_filter('body_class', 'mad_body_classes');
