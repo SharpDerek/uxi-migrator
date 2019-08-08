@@ -32,7 +32,7 @@ require(get_stylesheet_directory().'/layout/layout.php'); ?>
 	<?php endif; ?>
 	<?php if ($mobile_right_drawer): ?>
 		<div class="mobile-drawer mobile-drawer-right">
-			<?php echo $mobile_right_drawer; ?>
+			<?php echo do_shortcode($mobile_right_drawer); ?>
 		</div>
 	<?php endif; ?>
 	<div class="mobile-content-overlay"></div>

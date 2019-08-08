@@ -90,6 +90,14 @@ function uxi_check_reading_settings() {
 
 		<li>
 			<?php echo uxi_migration_check(
+				class_exists('A3_Lazy_Load'),
+				get_dashboard_url(0, 'plugin-install.php?s=a3+lazy+load'),
+				"A3 Lazy Load plugin installed, updated and activated"
+			); ?>
+		</li>
+
+		<li>
+			<?php echo uxi_migration_check(
 				uxi_check_acf_sync(),
 				get_dashboard_url(0, 'edit.php?post_type=acf-field-group&post_status=sync'),
 				"ACF field groups synchronized from theme"
