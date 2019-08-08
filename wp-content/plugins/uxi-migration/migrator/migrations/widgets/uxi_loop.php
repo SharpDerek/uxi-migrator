@@ -4,13 +4,19 @@ if (!UXI_ITEM) {
 	return;
 }
 
-foreach($xpath->query('//*[@id="main-title"]') as $title) {
-	if ($title->hasAttributes()) {
-		$title_class = $title->attributes->getNamedItem('class')->value;
+$title_query = $xpath->query('//*[@id="main-title"]');
 
-		$class_array = explode(" ",$title_class);
-		$heading_tag = $class_array[count($class_array)-1];
+if ($title_query->length > 0) {
+	foreach($title_query as $title) {
+		if ($title->hasAttributes()) {
+			$title_class = $title->attributes->getNamedItem('class')->value;
+
+			$class_array = explode(" ",$title_class);
+			$heading_tag = $class_array[count($class_array)-1];
+		}
 	}
+} else {
+	$heading_tag = 'hidden';
 }
 
 array_push($fields,array(

@@ -39,7 +39,7 @@
 						</div>
 					<?php endif; ?>
 					<div class="editor-content">
-						<?php the_content(); ?>
+						<?php get_template_part('templates/loop','page'); ?>
 					</div>
 				<?php endif; ?>
 			</div>
