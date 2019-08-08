@@ -1,0 +1,629 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"lin",
+				"linkspan"
+			],
+			[
+				"mobile_drawer",
+				"mobile_drawer_left_content"
+			],
+			[
+				"pos",
+				"postArray"
+			],
+			[
+				"update",
+				"updateProgressLog"
+			],
+			[
+				"mad",
+				"mad_template"
+			],
+			[
+				"MADN",
+				"MADNIFY_TEMPLATES_NAME"
+			],
+			[
+				"MADF",
+				"MADNIFY_TEMPLATES_PATH"
+			],
+			[
+				"MANDI",
+				"MADNIFY_CLASSES_PATH"
+			],
+			[
+				"MA",
+				"MADNIFY_CORE_PATH"
+			],
+			[
+				"madnify",
+				"madnify_redirect_page_templates"
+			],
+			[
+				"MAD",
+				"MADNIFY_PATH"
+			],
+			[
+				"refr",
+				"refreshHierarchyCallback"
+			],
+			[
+				"this",
+				"thiskey"
+			],
+			[
+				"out",
+				"output_value"
+			],
+			[
+				"break",
+				"breakpoint"
+			],
+			[
+				"format",
+				"format_output"
+			],
+			[
+				"min",
+				"min_exists"
+			],
+			[
+				"max",
+				"max_exists"
+			],
+			[
+				"clear",
+				"clearstring"
+			],
+			[
+				"html",
+				"htmlentities"
+			],
+			[
+				"post",
+				"post_type"
+			],
+			[
+				"button",
+				"buttontext"
+			],
+			[
+				"slu",
+				"slugArray"
+			],
+			[
+				"produc",
+				"product_details"
+			],
+			[
+				"restr",
+				"restriction_end"
+			],
+			[
+				"move",
+				"move_block"
+			],
+			[
+				"contact",
+				"contact-box"
+			],
+			[
+				"no",
+				"normal"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"hero_bu",
+				"hero_button1_text"
+			],
+			[
+				"hero",
+				"hero_button1_link"
+			],
+			[
+				"hero_button1_",
+				"hero_button1_text"
+			],
+			[
+				"get",
+				"getElementsByClassName"
+			],
+			[
+				"prod",
+				"prodName"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "wp-content/plugins/uxi-migration/menu/pre-migration-checklist.php",
+			"settings":
+			{
+				"buffer_size": 3937,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"PACK",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 432.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Work/___USEFUL STUFF/UXI Migrator",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/menu",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator"
+	],
+	"file_history":
+	[
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/templates/header.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/layout/fields/uxi_widget_logo.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/widgets/uxi_widget_logo.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/menu/migration-menu.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/widgets/uxi_widget_social.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/widgets/uxi_loop.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/layout/fields/uxi_loop.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/inc/posttypes.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/templates/loop-page.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/widgets/uxi_widget_social_2.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/layout/fields/uxi_widget_social.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/assets/css/uxi-migration.css",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/layout/fields/uxi_loop_header.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/widgets/uxi_loop_header.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/templates/loop-testimonials.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/templates/loop-testimonial.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/menu/migration-runner.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/inc/config.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/assets/js/uxi-migration.js",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/rest/uxi-rest-endpoint.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/menu/migration-checklist.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/uxi-migration-do-mobile-header.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/inc/enqueue.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/js/admin/admin.js",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/scripts/uxi-migration.js",
+		"/C/Users/derek.sharp/Downloads/Ftp madwire@stormtightwindowstexas.com.xml",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/widgets/widget_categories.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/functions/uxi-function-menu-match.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/layout/fields/widget_categories.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/functions/uxi-function-gravityform-shortcode.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/layout/fields/widget_uxi_navigation.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/widgets/uxi_widget_search.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/widgets/widget_uxi_custom_menu.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/layout/fields/uxi_widget_search.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/widgets/widget_uxi_navigation.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/widgets/widget.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/functions/uxi-function-curl.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/widgets/uxi_gform.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/uxi-migration-do-rows.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/functions/uxi-functions-loader.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/inc/core.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/inc/template-tags.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/templates/loop.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/templates/loop-single.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/templates/post-meta.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/inc/options.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/uxi-migration-do-layout.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/uxi-migration-do-layout-assign.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-admin/options-media.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/uxi-migrations-loader.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/layout/layout-loader.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/functions/uxi-function-print.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/uxi-migration-do-create-layout-post.php",
+		"/M/Employees/Derek Sharp/Work/UXi Nav Walker/nav-walker.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/inc/uxi/nav-walker.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/inc/shortcodes.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/inc/uxi-functions.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/inc/UXI/dynamic-content.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/themes/mad-uxi-migrator/functions.php",
+		"/M/Employees/Derek Sharp/Work/UXi Dynamic Content/dynamic-content.php",
+		"/C/Work/Name a Star/wp-content/themes/name-a-star/modules/StarCertificate.php",
+		"/C/Work/Name a Star/sftp-config.json",
+		"/C/Users/derek.sharp/AppData/Roaming/Sublime Text 3/Packages/User/SFTP.errors.log",
+		"/C/Work/Name a Star/nas-certificate.pdf",
+		"/C/Work/Name a Star/certificate-data-export.php",
+		"/C/Work/Name a Star/certificate-export-single.php",
+		"/C/Work/Name a Star/certificate-export-order.php",
+		"/C/Work/Name a Star/certificate-pdf-export.php",
+		"/C/Work/Name a Star/download-instant-certificate.php",
+		"/C/Work/Thistle and That/sftp-config.json",
+		"/C/Work/Thistle and That/wp-content/plugins/thistle-and-that-plugin/plugin.php",
+		"/C/Work/Thistle and That/test.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/.gitignore",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/wp-content/plugins/uxi-migration/migrator/migrations/uxi-migration-do-scripts.php",
+		"/C/Work/___USEFUL STUFF/UXI Migrator/sftp-config.json",
+		"/C/Work/Murphy Falcon/wp-content/plugins/madnify/includes/woocommerce.php",
+		"/C/Work/Murphy Falcon/wp-content/plugins/madnify/changelog.md",
+		"/C/Work/Murphy Falcon/wp-content/plugins/madnify/includes/custom.php",
+		"/C/Work/Murphy Falcon/wp-content/plugins/madnify/theme-edits/old/murphyfalcon~header.php",
+		"/C/Work/Murphy Falcon/wp-content/plugins/madnify/theme-edits/current/murphyfalcon~header.php",
+		"/C/Work/Murphy Falcon/wp-content/themes/murphyfalcon/header.php",
+		"/C/Work/Murphy Falcon/wp-content/plugins/madnify/public/js/madnify.js",
+		"/C/Work/Murphy Falcon/wp-content/plugins/madnify/public/css/madnify.css",
+		"/C/Work/Murphy Falcon/sftp-config.json",
+		"/C/Users/derek.sharp/Desktop/iframetest.html",
+		"/C/Work/Murphy Falcon/wp-content/themes/murphyfalcon/functions.php",
+		"/C/Work/Murphy Falcon/wp-content/plugins/madnify/core/core-templates.php",
+		"/C/Work/Murphy Falcon/wp-content/plugins/madnify/templates/templates.php",
+		"/C/Work/LUI Plus/wp-content/plugins/madnify/changelog.md",
+		"/C/Work/LUI Plus/wp-content/plugins/madnify/includes/woocommerce.php",
+		"/C/Work/LUI Plus/sftp-config.json",
+		"/C/Work/LUI Plus/wp-content/plugins/madnify/public/css/madnify.css",
+		"/C/Work/LUI Plus/wp-content/plugins/madnify/public/enqueue.php",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/core/core-templates.php",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/templates/template-test.php",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/core/core.php",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/templates/templates.php",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/admin/options/options.php",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/madnify.php",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/includes/posttypes.php",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/admin/admin-enqueue.php",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/classes/class-madnify.php",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/admin/js/madnify-admin.js",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/classes/classes.php",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/includes/shortcodes.php",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/changelog.md",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/README.md",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/public/enqueue.php",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/classes/class-madnify-templates.php",
+		"/C/xampp/htdocs/madnify-test/wp-content/plugins/madnify/classes/class-someotherclass.php",
+		"/C/Work/___USEFUL STUFF/Woo360 Custom Functions/admin/css/madnify-admin.css",
+		"/C/Work/___USEFUL STUFF/Woo360 Custom Functions/admin/js/madnify-admin.js",
+		"/C/Work/___USEFUL STUFF/Woo360 Custom Functions/assets/js/madnify.js",
+		"/C/Work/___USEFUL STUFF/Woo360 Custom Functions/includes/woocommerce.php",
+		"/C/Work/___USEFUL STUFF/Woo360 Custom Functions/includes/posttypes.php",
+		"/C/Work/___USEFUL STUFF/Woo360 Custom Functions/includes/shortcodes.php",
+		"/C/Work/Title Partners (vomits)/sftp-config.json",
+		"/C/Work/Vitagenis/wp-content/plugins/mad-custom-functions/mad-custom-functions.php",
+		"/C/Work/Vitagenis/wp-content/plugins/mad-custom-functions/includes/shortcodes.php",
+		"/C/Work/Vitagenis/wp-content/plugins/mad-custom-functions/assets/css/mad-custom.css",
+		"/C/Work/Vitagenis/wp-content/plugins/mad-custom-functions/includes/layouts/product_description.php",
+		"/C/Work/Vitagenis/wp-content/plugins/mad-custom-functions/includes/woocommerce.php",
+		"/C/Work/Vitagenis/wp-content/plugins/mad-custom-functions/includes/layouts/product_supplement_facts.php",
+		"/C/Work/Vitagenis/wp-content/plugins/mad-custom-functions/includes/layouts/product_short_description.php",
+		"/C/Work/Vitagenis/wp-content/plugins/mad-custom-functions/includes/layouts/product_images.php",
+		"/C/Work/Vitagenis/wp-content/plugins/mad-custom-functions/includes/layouts/product_does_not_contain.php",
+		"/C/Work/Vitagenis/wp-content/plugins/mad-custom-functions/includes/layouts/product_directions.php",
+		"/C/Work/Vitagenis/wp-content/plugins/mad-custom-functions/includes/layouts/product_benefits.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"<project>",
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"(.)(icon-uxis-.+)(:)",
+			"(.)(icon-uxis-.+:)",
+			"vimeo",
+			"medium_large",
+			"medium-large",
+			"The sizes listed below determine the maximum dimensions in pixels to use when adding an image to the Media Library.",
+			"render_tags",
+			"quick view",
+			"adrenal",
+			"register_nav_menu",
+			"woocommerce_show_product_thumbnails",
+			"wc-template-hooks.php",
+			"woocommerce_show_product_thumbnails",
+			"remove",
+			"unmount",
+			"sort",
+			".col-",
+			"append",
+			"remove_field",
+			"sort",
+			"onClickAdd",
+			"add-layout",
+			"data-name",
+			"add row",
+			"action",
+			"acf-action",
+			"content",
+			"flex",
+			"row",
+			"add",
+			"add row",
+			"header",
+			"create_css_rule",
+			"all",
+			");\n",
+			"create_style_tag",
+			")) ",
+			"parse_css",
+			"create_styles",
+			"jquery",
+			"preview",
+			"white",
+			"debug",
+			".woocommerce.tax-product_cat .main",
+			".woocommerce.tax-product_cat",
+			"sidebar",
+			"overflow:",
+			".main-nav-wrap.drawer-menu.mobile-menu-open",
+			"us-flag",
+			"\"><",
+			"page-title",
+			"columnWidth",
+			";\n",
+			"phone",
+			"!important",
+			"search",
+			"searchsubmit",
+			";\n",
+			"navbar-header",
+			"navbar",
+			"$(document)",
+			"document",
+			"!important",
+			"row:after",
+			"col-",
+			".woocommerce div.product form.cart .variations select",
+			"add_image_size",
+			"pagination",
+			"arrow",
+			";\n",
+			"7",
+			"display_settings",
+			"\">\n",
+			"\n<div class=\"cta-normal\"></div>",
+			">\n",
+			".cta-row .icon-block-white .icon-name",
+			"a {",
+			"a",
+			"product_links",
+			"phone",
+			"}\n",
+			"add_action",
+			"do_shortcode",
+			".hero-acf-banner",
+			".hero-acf-banner .hero-title",
+			".btn-navbar",
+			"main-nav-wrap",
+			"mobile",
+			"nameHeight",
+			"legen",
+			"<legend>TO TALK TO AN INSURANCE SPECIALIST CALL <a href=\"tel:3142661199\">(314) 266-1199</a></legend>",
+			"<legend>TO TALK TO AN INSURANCE SPECIALIST CALL&nbsp;(636) 244-4415</legend>",
+			"legend",
+			"';\n",
+			";\n",
+			"google",
+			"facebook",
+			"ol, ul",
+			"// Setup",
+			"//Setup",
+			"a:visited",
+			"&:visited",
+			"a:visited",
+			".button",
+			".button,",
+			".button",
+			".button,",
+			".button",
+			"'));",
+			"\"http:",
+			"http:",
+			"http",
+			"\"http",
+			"<?",
+			"\"http",
+			"http",
+			"http:"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"option[value=\"$2\"]:",
+			"option[value=\"$2\"]",
+			".col.col-",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "wp-content/plugins/uxi-migration/menu/pre-migration-checklist.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3937,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1909,
+								1909
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 855.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 217.0
+	},
+	"pinned_build_system": "",
+	"project": "UXI Migrator.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 399.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
