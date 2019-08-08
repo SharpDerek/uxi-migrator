@@ -1,5 +1,7 @@
 <div class="wrap">
 	<h1 class="wp-heading-inline">UXI MIGRATOR</h1>
+	
+	<?php update_field('uxi_logo', attachment_url_to_postid('/wp-content/uploads/2019/02/touchicon-5c6b37fc72091.jpg'), 'option'); ?>
 
 	<div class="migrator-wrap">
 
