@@ -7,24 +7,22 @@ if (!UXI_ITEM) {
 $xpath = new DOMXpath($dom);
 $link_array = array();
 
-foreach($xpath->query($element->getNodePath().'//*[@class="social-icons"]/li/a') as $link) {
-	if ($link->hasAttribute('href')) {
-		$href = $link->attributes->getNamedItem('href')->value;
-	} else {
-		$href = "";
-	}
-	foreach($link->childNodes as $span) {
-		if ($span->hasAttribute('class')) {
-			if ($span->attributes->getNamedItem('class')->value !== 'sr-only') {
-				$icon = $span->attributes->getNamedItem('class')->value;
-				break;
+foreach($xpath->query($element->getNodePath().'//*[@class="social-icons"]/li/a/span') as $linkspan) {
+	if ($linkspan->hasAttribute('class')) {
+		if (strpos($linkspan->attributes->getNamedItem('class')->value, 'sr-only') === false) {
+			$link = $linkspan->parentNode;
+			if ($link->hasAttribute('href')) {
+				$href = $link->attributes->getNamedItem('href')->value;
+			} else {
+				$href = "";
 			}
+			$icon = $linkspan->attributes->getNamedItem('class')->value;
+			$link_array[] = array (
+				'link' => $href,
+				'icon' => $icon
+			);
 		}
 	}
-	$link_array[] = array (
-		'link' => $href,
-		'icon' => $icon
-	);
 }
 
 

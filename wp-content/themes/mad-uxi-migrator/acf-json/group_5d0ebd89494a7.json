@@ -664,9 +664,8 @@
                                 "id": ""
                             },
                             "choices": {
-                                "footer-navigation": "Footer Navigation",
-                                "header-navigation": "Header Navigation",
-                                "services-menu": "Services Menu"
+                                "footer-menu": "Footer Menu",
+                                "main-navigation": "Main Navigation"
                             },
                             "default_value": [],
                             "allow_null": 0,
@@ -900,8 +899,8 @@
                 },
                 "layout_5d140bc28d36e": {
                     "key": "layout_5d140bc28d36e",
-                    "name": "uxi_loop",
-                    "label": "Main Content Widget",
+                    "name": "uxi_widget_social",
+                    "label": "Social Icons Widget",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -921,10 +920,10 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_5d17f39c4633b",
-                            "label": "Heading Tag",
-                            "name": "heading_tag",
-                            "type": "select",
+                            "key": "field_5d4883c51df12",
+                            "label": "Social Links",
+                            "name": "social_links",
+                            "type": "repeater",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -933,40 +932,114 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "h1": "h1",
-                                "h2": "h2",
-                                "h3": "h3",
-                                "h4": "h4",
-                                "h5": "h5",
-                                "h6": "h6"
-                            },
-                            "default_value": [
-                                "h1"
-                            ],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
-                            "ajax": 0,
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_5d140bfa8d373",
-                            "label": "Content",
-                            "name": "",
-                            "type": "message",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "This widget is where the current page's text editor content will be displayed.",
-                            "new_lines": "wpautop",
-                            "esc_html": 0
+                            "collapsed": "field_5d4883eb1df13",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5d4883eb1df13",
+                                    "label": "Icon",
+                                    "name": "icon",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "icon-uxis-blogger": "Blogger",
+                                        "icon-uxis-blogger-sqr": "Blogger Square",
+                                        "icon-uxis-contact": "Phone",
+                                        "icon-uxis-delicious": "Delicous",
+                                        "icon-uxis-dribbble": "Dribbble",
+                                        "icon-uxis-dribbble-inv": "Dribbble Inverse",
+                                        "icon-uxis-dribbble-sqr": "Dribbble Square",
+                                        "icon-uxis-facebook": "Facebook",
+                                        "icon-uxis-facebook-rnd": "Facebook Round",
+                                        "icon-uxis-facebook-sqr": "Facebook Square",
+                                        "icon-uxis-feed": "Feed",
+                                        "icon-uxis-feed-rnd": "Feed Round",
+                                        "icon-uxis-feed-sqr": "Feed Square",
+                                        "icon-uxis-flickr": "Flickr",
+                                        "icon-uxis-flickr-rnd": "Flickr Round",
+                                        "icon-uxis-flickr-sqr": "Flickr Square",
+                                        "icon-uxis-flickr2": "Flickr 2",
+                                        "icon-uxis-foursquare": "Foursquare",
+                                        "icon-uxis-github": "Github",
+                                        "icon-uxis-github-sqr": "Github Square",
+                                        "icon-uxis-google-plus": "Google+",
+                                        "icon-uxis-google-plus-rnd": "Google+ Round",
+                                        "icon-uxis-google-plus-sqr": "Google+ Square",
+                                        "icon-uxis-houzz": "Houzz",
+                                        "icon-uxis-instagram": "Instagram",
+                                        "icon-uxis-lastfm": "Lastfm Square",
+                                        "icon-uxis-linkedin": "Linkedin",
+                                        "icon-uxis-mail": "Mail",
+                                        "icon-uxis-mail-rnd": "Mail Round",
+                                        "icon-uxis-mail-sqr": "Mail Square",
+                                        "icon-uxis-medium": "Medium",
+                                        "icon-uxis-pinterest-rnd": "Pinterest Round",
+                                        "icon-uxis-pinterest-sqr": "Pinterest Square",
+                                        "icon-uxis-reddit": "Reddit",
+                                        "icon-uxis-skype": "Skype",
+                                        "icon-uxis-slack": "Slack",
+                                        "icon-uxis-snapchat": "Snapchat",
+                                        "icon-uxis-snapchat-rnd": "Snapchat Round",
+                                        "icon-uxis-snapchat-sqr": "Snapchat Square",
+                                        "icon-uxis-soundcloud": "SoundCloud",
+                                        "icon-uxis-soundcloud-sqr": "SoundCloud Square",
+                                        "icon-uxis-spotify": "Spotify",
+                                        "icon-uxis-stackoverflow": "StackOverflow",
+                                        "icon-uxis-stumbleupon-rnd": "StumbleUpon Round",
+                                        "icon-uxis-stumbleupon-sqr": "StumbleUpon Square",
+                                        "icon-uxis-trl": "Top Rated Local",
+                                        "icon-uxis-trl-rnd": "Top Rated Local Round",
+                                        "icon-uxis-trl-sqr": "Top Rated Local Square",
+                                        "icon-uxis-tumblr": "Tumblr",
+                                        "icon-uxis-tumblr-sqr": "Tumblr Square",
+                                        "icon-uxis-twitter": "Twitter",
+                                        "icon-uxis-twitter-rnd": "Twitter Round",
+                                        "icon-uxis-twitter-sqr": "Twitter Square",
+                                        "icon-uxis-vimeo": "Vimeo",
+                                        "icon-uxis-vimeo-rnd": "Vimeo Round",
+                                        "icon-uxis-vimeo-sqr": "Vimeo Square",
+                                        "icon-uxis-yahoo": "Yahoo",
+                                        "icon-uxis-yelp": "Yelp",
+                                        "icon-uxis-youtube": "YouTube"
+                                    },
+                                    "default_value": [],
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "return_format": "value",
+                                    "ajax": 0,
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_5d488b481df14",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
                         },
                         {
                             "key": "field_5d140bc28d36f",
@@ -1025,6 +1098,232 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5d48831e1df0c": {
+                    "key": "layout_5d48831e1df0c",
+                    "name": "uxi_loop_header",
+                    "label": "Main Title Widget",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d48831e1df0d",
+                            "label": "Content",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5d48831e1df0e",
+                            "label": "Title",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "This widget is where the current page's title will be displayed.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_5d48831e1df0f",
+                            "label": "Block",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5d48831e1df10",
+                            "label": "ID",
+                            "name": "id",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5d48831e1df11",
+                            "label": "Class",
+                            "name": "class",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d4879892f769": {
+                    "key": "layout_5d4879892f769",
+                    "name": "uxi_loop",
+                    "label": "Main Content Widget",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d4879892f76a",
+                            "label": "Content",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5d4879892f76b",
+                            "label": "Heading Tag",
+                            "name": "heading_tag",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "h1": "h1",
+                                "h2": "h2",
+                                "h3": "h3",
+                                "h4": "h4",
+                                "h5": "h5",
+                                "h6": "h6",
+                                "hidden": "hidden"
+                            },
+                            "default_value": [
+                                "h1"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5d4879892f76c",
+                            "label": "Content",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "This widget is where the current page's text editor content will be displayed.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_5d4879892f76d",
+                            "label": "Block",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5d4879892f76e",
+                            "label": "ID",
+                            "name": "id",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5d4879892f76f",
+                            "label": "Class",
+                            "name": "class",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Block",
@@ -1045,6 +1344,13 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "mad360_testimonial"
             }
         ],
         [
@@ -1077,5 +1383,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1563227096
+    "modified": 1565036294
 }
