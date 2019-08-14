@@ -91,7 +91,7 @@ function uxi_check_reading_settings() {
 		<li>
 			<?php echo uxi_migration_check(
 				class_exists('A3_Lazy_Load'),
-				get_dashboard_url(0, 'plugin-install.php?s=a3+lazy+load'),
+				get_dashboard_url(0, 'plugin-install.php?tab=plugin-information&plugin=a3+lazy+load'),
 				"A3 Lazy Load plugin installed, updated and activated"
 			); ?>
 		</li>
