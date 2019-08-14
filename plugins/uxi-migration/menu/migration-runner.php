@@ -25,9 +25,13 @@
 				<label for="migrate-posts">Posts</label><br>
 				<input type="checkbox" id="migrate-testimonials" name="migrations[post_types][]" value="mad360_testimonial" checked>
 				<label for="migrate-testimonials">Testimonials</label><br>
+				<?php if (class_exists('WP_Store_locator')): ?>
+					<input type="checkbox" id="migrate-locations" name="migrations[post_types][]" value="wpsl_stores" checked>
+					<label for="migrate-locations">Locations</label><br>
+				<?php endif; ?>
 		     </p>
 		     <p>
-		       <input name="do_it" type="submit" class="button-primary" value="Start Migration"> 
+		       <input name="start_migration" type="submit" class="button-primary" value="Start Migration"> 
 		     </p>
 		   </form>
 		</div>

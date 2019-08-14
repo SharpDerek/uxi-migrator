@@ -98,6 +98,14 @@ function uxi_check_reading_settings() {
 
 		<li>
 			<?php echo uxi_migration_check(
+				class_exists('WP_Store_locator'),
+				get_dashboard_url(0, 'plugin-install.php?tab=plugin-information&plugin=wp+store+locator'),
+				"(Locations Only) WP Store Locator plugin installed, updated and activated"
+			); ?>
+		</li>
+
+		<li>
+			<?php echo uxi_migration_check(
 				uxi_check_acf_sync(),
 				get_dashboard_url(0, 'edit.php?post_type=acf-field-group&post_status=sync'),
 				"ACF field groups synchronized from theme"

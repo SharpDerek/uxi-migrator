@@ -34,8 +34,9 @@ function mad_register_post_types(){
 		'menu_position' => 20,
 		'supports' => array( 'title', 'page-attributes', 'editor', 'thumbnail' )
 	);
-	register_post_type( 'mad360_testimonial', $posttype_args );	// Testimonials
+	register_post_type( 'mad360_testimonial', $posttype_args );
 
+	// Header Layouts
 	$posttype_labels = array(
 		'name' => __('Header Layouts', 'mad'),
 		'singular_name' => __('Header Layout', 'mad'),
@@ -68,6 +69,7 @@ function mad_register_post_types(){
 	);
 	register_post_type( 'uxi-header-layout', $posttype_args );
 
+	// Page Layouts
 	$posttype_labels = array(
 		'name' => __('Page Layouts', 'mad'),
 		'singular_name' => __('Page Layout', 'mad'),
@@ -100,6 +102,7 @@ function mad_register_post_types(){
 	);
 	register_post_type( 'uxi-main-layout', $posttype_args );
 
+	// Footer Layouts
 	$posttype_labels = array(
 		'name' => __('Footer Layouts', 'mad'),
 		'singular_name' => __('Footer Layout', 'mad'),

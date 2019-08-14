@@ -15,6 +15,7 @@ if ($response) {
 		define('UXI_ASSET_URL',uxi_get_url($dom));
 
 		require_once(UXI_MIGRATIONS_NAME.'delete-layouts.php');
+		require_once(UXI_MIGRATIONS_NAME.'locations.php');
 		require_once(UXI_MIGRATIONS_NAME.'local-img.php');
 		require_once(UXI_MIGRATIONS_NAME.'external-assets.php');
 		require_once(UXI_MIGRATIONS_NAME.'assets.php');
@@ -25,8 +26,11 @@ if ($response) {
 		require_once(UXI_MIGRATIONS_NAME.'mobile-header.php');
 		require_once(UXI_MIGRATIONS_NAME.'layout-assign.php');
 
-		//uxi_print_response($response);
+		
+		uxi_do_locations();
+
 		if ($post_id || $slug) {
+			uxi_do_location_data($post_id, $dom);
 			if ($post_id) {
 				uxi_print("Post ".$post_id." (".$slug.")","open");
 			} else {
