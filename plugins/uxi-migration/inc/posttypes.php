@@ -27,12 +27,12 @@ function uxi_register_posttypes() {
 			'show_in_menu' => true,
 			'menu_icon'   => 'dashicons-location-alt',
 			'query_var' => true,
-			'rewrite' => array( 'slug' => 'uxi-locations' ),
+			'rewrite' => array( 'slug' => 'locations' ),
 			'capability_type' => 'page',
 			'has_archive' => true,
 			'hierarchical' => true,
 			'menu_position' => 2,
-			'supports' => array( 'title', 'page-attributes', 'editor', 'thumbnail' )
+			'supports' => array( 'title', 'page-attributes', 'editor', 'thumbnail', 'excerpt' )
 		);
 		register_post_type( 'uxi_locations', $posttype_args );
 	}

@@ -1,5 +1,15 @@
 <?php
 
+function uxi_get_permalink($id) {
+  if (get_post_status($id) == 'publish') {
+    //return 'published '.$id;
+    return get_permalink($id);
+  } else {
+    //return 'NOT published  '.$id;
+    return get_post_permalink($id, false, true);
+  }
+}
+
 function uxi_rest_endpoint(WP_REST_Request $request){
 
   $GLOBALS['uxi_migrator_progress'] = "";
@@ -7,11 +17,19 @@ function uxi_rest_endpoint(WP_REST_Request $request){
   if ( check_ajax_referer('wp_rest', '_wpnonce') ){
     $post_id = $request['post_id'];
 
+    if ($post_id) {
+      $post_type = get_post_type($post_id);
+    }
+
     $slug = $request['slug'];
     if (!$slug) {
-      $slug = get_post_field('post_name',$post_id);
+      $slug = str_replace(trailingslashit(home_url()), "", uxi_get_permalink($post_id));
     }
+    //return $slug;
+
     $uxi_url = $request['uxi_url'].$slug; 
+
+    //return $uxi_url;
 
     // if ($post_id) {
     //   if (get_post($post_id)->post_password !== "") {
