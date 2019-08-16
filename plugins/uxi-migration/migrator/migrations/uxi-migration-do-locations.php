@@ -27,26 +27,39 @@ function uxi_do_location_data($post_id, $dom) {
 			'wpsl_state',
 			'wpsl_zip',
 		);
-		foreach($xpath->query('//*[@class="company-info-address"]/span/span') as $address_item) {
-			if (strpos($dom->saveHTML($address_item), "<br>") > -1) {
-				foreach($address_item->childNodes as $childNode) {
-					if ($childNode->textContent) {
-						update_post_meta($post_id, $address_items[$address_index], $childNode->textContent);
+		foreach($xpath->query('//*[@class="company-info-address"]/span/*') as $address_item) {
+			switch ($address_item->nodeName) {
+				case 'span':
+					if (strpos($dom->saveHTML($address_item), "<br>") > -1) {
+						foreach($address_item->childNodes as $childNode) {
+							if ($childNode->textContent) {
+								update_post_meta($post_id, $address_items[$address_index], trim($childNode->textContent));
+								$address_index++;
+							}
+						}
+					} else {
+						update_post_meta($post_id, $address_items[$address_index], trim($address_item->textContent));
 						$address_index++;
 					}
-				}
-			} else {
-				update_post_meta($post_id, $address_items[$address_index], $address_item->textContent);
-				$address_index++;
+					break;
+				case 'br':
+					$address_index=2;
+					break;
 			}
 		}
-		// foreach($xpath->query('//*[@class="company-info"]') as $info_block) {
-		// 	$post = array(
-		// 		'ID' => $post_id,
-		// 		'post_excerpt' => $dom->saveHTML($info_block),
-		// 	);
-
-		// 	wp_update_post($post);
-		// }
+		foreach($xpath->query('//*[@class="company-info-phone"]//a') as $phone_item) {
+			update_post_meta($post_id, 'wpsl_phone', trim($phone_item->textContent));
+		}
+		foreach($xpath->query('//*[@class="company-info-fax"]//a') as $fax_item) {
+			update_post_meta($post_id, 'wpsl_fax', trim($fax_item->textContent));
+		}
+		foreach($xpath->query('//*[@class="company-info-email"]//a') as $email_item) {
+			update_post_meta($post_id, 'wpsl_email', trim($email_item->textContent));
+		}
+		foreach($xpath->query('//*[@class="company-info-ext-link"]//a') as $url_item) {
+			if ($url_item->hasAttribute('href')) {
+				update_post_meta($post_id, 'wpsl_url', $url_item->attributes->getNamedItem('href')->value);
+			}
+		}
 	}
 }
