@@ -7,7 +7,7 @@ if ($response) {
 	define('UXI_WIDGETS_PATH',plugin_dir_path(__FILE__).'widgets/');
 
 
-	function uxi_do_migration($response, $post_id = false, $slug = false, $post_type = false, $do_assets = false, $do_scripts = false, $do_mobile = false) {
+	function uxi_do_migration($response, $post_id = false, $slug = false, $post_type = false, $do_assets = false, $do_scripts = false, $do_mobile = false, $do_location_settings = false) {
 
 		$dom = new DOMDocument();
 		@$dom->loadHTML(utf8_decode($response));
@@ -41,6 +41,7 @@ if ($response) {
 				switch($post_type) {
 					case 'uxi_locations':
 						uxi_do_location_data($post_id, $dom);
+						$post_id = uxi_do_migrate_location($post_id);
 						break;
 				}
 			}
@@ -57,10 +58,12 @@ if ($response) {
 			uxi_do_scripts($dom);
 		} elseif ($do_mobile) {
 			uxi_do_mobile_header($dom);
+		} elseif ($do_location_settings) {
+			uxi_do_locations();
 		}
 
 
 	}
-	uxi_do_migration($response, $post_id, $slug, $post_type, $do_assets, $do_scripts, $do_mobile);
+	uxi_do_migration($response, $post_id, $slug, $post_type, $do_assets, $do_scripts, $do_mobile, $do_location_settings);
 
 }

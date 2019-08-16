@@ -5,14 +5,43 @@ function uxi_do_locations() {
 
 		// Change WPSL Settings
 		$wpsl_settings = get_option('wpsl_settings');
+		$wpsl_editor = get_option('wpsl_editor');
 
 		$wpsl_settings['permalinks'] = 1;
 		$wpsl_settings['permalink_remove_front'] = 1;
 		$wpsl_settings['permalink_slug'] = "location";
 		$wpsl_settings['category_slug'] = "location-category";
+		$wpsl_editor['default_country'] = "United States";
 
 		update_option('wpsl_settings', $wpsl_settings);
+		update_option('wpsl_editor', $wpsl_editor);
 	}
+	uxi_print("WPSL Settings Updated.");
+}
+
+function uxi_do_migrate_location($post_id) {
+	if (class_exists('WP_Store_locator')) {
+		$location_post = get_post($post_id)->to_array();
+		$location_meta = get_post_meta($post_id);
+
+		$wpsl_post = $location_post;
+
+		$wpsl_post['post_type'] = 'wpsl_stores';
+		unset($wpsl_post['guid']);
+		unset($wpsl_post['ID']);
+
+		$new_post_id = wp_insert_post($wpsl_post);
+
+		if ($new_post_id) {
+
+			foreach($location_meta as $key => $value) {
+				update_post_meta($new_post_id, $key, implode("", $value));
+			}
+
+			return $new_post_id;
+		}
+	}
+	return $post_id;
 }
 
 function uxi_do_location_data($post_id, $dom) {

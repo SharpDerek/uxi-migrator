@@ -25,6 +25,13 @@
 						'uxi_url': uxi_url
 					}
 				break;
+				case 'do_location_settings':
+					ajaxData = {
+						'_wpnonce': nonce,
+						'do_location_settings': 1,
+						'uxi_url': uxi_url
+					}
+				break;
 				default:
 					ajaxData = {
 						'_wpnonce': nonce,
