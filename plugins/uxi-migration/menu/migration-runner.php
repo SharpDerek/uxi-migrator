@@ -94,7 +94,7 @@
 
 						}
 					}
-					echo (class_exists('WP_Store_locator')) ? '"do_location_settings":[true]'."\n" : '' ;
+					echo (class_exists('WP_Store_locator')) ? '"do_location_settings":[true],'."\n" : '' ;
 				echo "};\n";
 
 				echo "var nonce = '".$nonce."';\n </script>";

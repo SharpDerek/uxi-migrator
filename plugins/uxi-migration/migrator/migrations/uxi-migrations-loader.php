@@ -61,8 +61,6 @@ if ($response) {
 		} elseif ($do_location_settings) {
 			uxi_do_locations();
 		}
-
-
 	}
 	uxi_do_migration($response, $post_id, $slug, $post_type, $do_assets, $do_scripts, $do_mobile, $do_location_settings);
 

@@ -22,12 +22,12 @@ function uxi_rest_endpoint(WP_REST_Request $request){
     }
 
     $slug = $request['slug'];
-    if (!$slug) {
+    if (!$slug && $post_id) {
       $slug = str_replace(trailingslashit(home_url()), "", uxi_get_permalink($post_id));
     }
     //return $slug;
 
-    $uxi_url = $request['uxi_url'].$slug; 
+    $uxi_url = $request['uxi_url'].$slug;
 
     //return $uxi_url;
 

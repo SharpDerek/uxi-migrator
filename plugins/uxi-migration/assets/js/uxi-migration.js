@@ -10,35 +10,35 @@
 						'do_assets': 1,
 						'uxi_url': uxi_url
 					}
-				break;
+					break;
 				case 'scripts':
 					ajaxData = {
 						'_wpnonce': nonce,
 						'do_scripts': 1,
 						'uxi_url': uxi_url
 					}
-				break;
+					break;
 				case 'mobile':
 					ajaxData = {
 						'_wpnonce': nonce,
 						'do_mobile': 1,
 						'uxi_url': uxi_url
 					}
-				break;
+					break;
 				case 'do_location_settings':
 					ajaxData = {
 						'_wpnonce': nonce,
 						'do_location_settings': 1,
 						'uxi_url': uxi_url
 					}
-				break;
+					break;
 				default:
 					ajaxData = {
 						'_wpnonce': nonce,
 						'post_id': postObj[Object.keys(postObj)[index]][subindex],
 						'uxi_url': uxi_url
 					}
-				break;
+					break;
 			}
 			if (subindex < postObj[Object.keys(postObj)[index]].length) {
 				$.ajax({

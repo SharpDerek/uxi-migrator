@@ -5,18 +5,16 @@ function uxi_do_locations() {
 
 		// Change WPSL Settings
 		$wpsl_settings = get_option('wpsl_settings');
-		$wpsl_editor = get_option('wpsl_editor');
 
 		$wpsl_settings['permalinks'] = 1;
 		$wpsl_settings['permalink_remove_front'] = 1;
 		$wpsl_settings['permalink_slug'] = "location";
 		$wpsl_settings['category_slug'] = "location-category";
-		$wpsl_editor['default_country'] = "United States";
+		$wpsl_settings['editor_country'] = "United States";
 
 		update_option('wpsl_settings', $wpsl_settings);
-		update_option('wpsl_editor', $wpsl_editor);
 	}
-	uxi_print("WPSL Settings Updated.");
+	uxi_print("WP Store Locator Settings Updated.");
 }
 
 function uxi_do_migrate_location($post_id) {
@@ -37,6 +35,7 @@ function uxi_do_migrate_location($post_id) {
 			foreach($location_meta as $key => $value) {
 				update_post_meta($new_post_id, $key, implode("", $value));
 			}
+			wp_delete_post($post_id, true);
 
 			return $new_post_id;
 		}
