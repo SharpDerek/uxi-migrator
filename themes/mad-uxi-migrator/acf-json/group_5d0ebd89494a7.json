@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "table",
             "sub_fields": [
                 {
                     "key": "field_5d12efb6283aa",
@@ -663,10 +663,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "footer-menu": "Footer Menu",
-                                "main-navigation": "Main Navigation"
-                            },
+                            "choices": [],
                             "default_value": [],
                             "allow_null": 0,
                             "multiple": 0,
@@ -1373,6 +1370,13 @@
                 "operator": "==",
                 "value": "uxi-footer-layout"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "wpsl_stores"
+            }
         ]
     ],
     "menu_order": 0,
@@ -1383,5 +1387,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1565036294
+    "modified": 1566502288
 }

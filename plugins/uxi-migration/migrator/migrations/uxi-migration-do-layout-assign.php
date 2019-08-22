@@ -1,6 +1,6 @@
 <?php
 
-function uxi_do_layout_assign($dom, $post_id = false, $slug = false) {
+function uxi_do_layout_assign($dom, $post_id, $slug = false) {
 
 	$xpath = new DOMXpath($dom);
 
@@ -15,17 +15,14 @@ function uxi_do_layout_assign($dom, $post_id = false, $slug = false) {
 
 		foreach($template_array as $template => $layout) {
 			$query = '//*[@'.$template.']//*[@data-layout]';
-			$layout_id = uxi_find_layout_post($xpath,$query,$template);
+			$layout_id = uxi_find_layout_post($xpath, $query, $template);
 
 			if ($layout_id) {
 				$layout_assign[$layout.'_layout'] = array($layout_id);
+				uxi_do_layout_count($post_id, $layout_id);
 			}
 		}
-		if ($post_id) {
-			update_field('layout',$layout_assign,$post_id);
-		} else {
-			
-		}
+		update_field('layout', $layout_assign, $post_id);
 		return true;
 	}
 	return false;

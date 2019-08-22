@@ -88,13 +88,15 @@
 									echo get_the_ID();
 									echo ",";
 								}
+								echo '"finalize"';
 								echo "],\n";
 							}
 							wp_reset_postdata();
 
 						}
 					}
-					echo (class_exists('WP_Store_locator')) ? '"do_location_settings":[true],'."\n" : '' ;
+					echo (class_exists('WP_Store_locator') && in_array("uxi_locations", $_POST['migrations'])) ? '"do_location_settings":[true],'."\n" : '' ;
+					echo '"do_finalization":[true]'."\n";
 				echo "};\n";
 
 				echo "var nonce = '".$nonce."';\n </script>";
