@@ -58,3 +58,8 @@ function uxi_migrator_admin_scripts() {
 	);
 }
 add_action('admin_enqueue_scripts', 'uxi_migrator_admin_scripts');
+
+function uxi_migrator_inc() {
+	require_once(plugin_dir_path(__FILE__).'inc/posttypes.php');
+}
+add_action('plugins_loaded', 'uxi_migrator_inc');
