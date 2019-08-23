@@ -102,17 +102,19 @@ function mad_populate_defaults() {
 
 		$rows = get_field('default_layouts', 'option');
 
-		foreach ($post_types as $post_type) {
-			$has_post_type_row = false;
-			foreach ($rows as $row) {
-				if ($row['post_type'] == $post_type) {
-					$has_post_type_row = true;
+		if ($rows) {
+			foreach ($post_types as $post_type) {
+				$has_post_type_row = false;
+				foreach ($rows as $row) {
+					if ($row['post_type'] == $post_type) {
+						$has_post_type_row = true;
+					}
 				}
-			}
-			if (!$has_post_type_row) {
-				add_row('default_layouts', array (
-					'post_type' => $post_type
-				), 'option');
+				if (!$has_post_type_row) {
+					add_row('default_layouts', array (
+						'post_type' => $post_type
+					), 'option');
+				}
 			}
 		}
 	}
