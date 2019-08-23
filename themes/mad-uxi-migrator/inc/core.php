@@ -1,4 +1,28 @@
-<?php
+<?
+
+function mad_get_post_types($type = 'objects') {
+	if ($type == 'objects') {
+		$post_types = array (
+			'mad_default' => new WP_Post_Type(
+				'mad_default',
+				array (
+					'labels' => array (
+					'singular_name' => 'Site Default'
+					)
+				)
+			)
+		);
+	} else if ($type == 'names') {
+		$post_types = array(
+			'mad_default'
+		);
+	}
+	$args = array (
+		'public' => true
+	);
+
+	return array_merge($post_types, get_post_types($args, $type));
+}
 
 function mad_get_all_wordpress_menus(){
 	return get_terms( 'nav_menu', array( 'hide_empty' => false ) ); 
@@ -16,6 +40,42 @@ function mad_populate_menus( $field ) {
 }
 
 add_filter('acf/load_field/name=widget_uxi_menu', 'mad_populate_menus');
+
+function mad_populate_post_types($field) {
+
+	$field['choices'] = array();
+
+	foreach(mad_get_post_types() as $post_type) {
+		$field['choices'][$post_type->name] = $post_type->labels->singular_name;
+	}
+	return $field;
+}
+add_filter('acf/load_field/name=post_type', 'mad_populate_post_types');
+
+function mad_populate_defaults() {
+
+	if (function_exists('get_field')) {
+
+		$post_types = mad_get_post_types('names');
+
+		$rows = get_field('default_layouts', 'option');
+
+		foreach ($post_types as $post_type) {
+			$has_post_type_row = false;
+			foreach ($rows as $row) {
+				if ($row['post_type'] == $post_type) {
+					$has_post_type_row = true;
+				}
+			}
+			if (!$has_post_type_row) {
+				add_row('default_layouts', array (
+					'post_type' => $post_type
+				), 'option');
+			}
+		}
+	}
+}
+add_action('admin_init', 'mad_populate_defaults');
 
 function mad_excerpt() {
 	global $post;

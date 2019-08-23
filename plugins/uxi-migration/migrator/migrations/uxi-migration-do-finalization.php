@@ -2,20 +2,8 @@
 
 function uxi_finalize_post_type($post_type) {
 	if (function_exists('update_field')) {
-		$template_uses_array = array(
-			'uxi_header_layout' => array (
-				'most_used_id' => 0,
-				'most_uses' => 0
-			),
-			'uxi_main_layout' => array (
-				'most_used_id' => 0,
-				'most_uses' => 0
-			),
-			'uxi_footer_layout' => array (
-				'most_used_id' => 0,
-				'most_uses' => 0
-			)
-		);
+
+		$post_type_templates = get_option('uxi_layout_counts')[$post_type];
 
 		$args = array (
 			'post_type' => $post_type,
@@ -27,22 +15,22 @@ function uxi_finalize_post_type($post_type) {
 		while($post_type_query->have_posts()) {
 			$post_type_query->the_post();
 			$templates_used = get_field('layout', get_the_ID());
-
+			$post_used_template = false;
 			foreach ($templates_used as $template_name => $template_id) {
-				$template_uses = get_post_meta($template_id[0], 'uxi_template_uses', true);
-				if ($template_uses > $template_uses_array[$template_name]['most_uses']) {
-					$template_uses_array[$template_name] = array (
-						'most_used_id' => $template_id[0],
-						'most_uses' => $template_uses
-					);
+				if ($template_id[0] == $post_type_templates[$template_name]['most_used_layout']) {
+					unset($templates_used[$template_name]);
+					$post_used_template = true;
 				}
+			}
+			if ($post_used_template) {
+				update_field('layout', $templates_used, get_the_ID());
 			}
 		}
 
 		wp_reset_query();
 
-		foreach($template_uses_array as $template => $value) {
-			uxi_print($post_type . ': ' . $template . ': default-layout: ' . $value['most_used_id'] . '<br>');
+		foreach($post_type_templates as $post_type_template) {
+			
 		}
 
 	}
