@@ -172,7 +172,7 @@
             "sub_fields": [
                 {
                     "key": "field_5d5ee9a161e0b",
-                    "label": "Post Type",
+                    "label": "",
                     "name": "post_type",
                     "type": "select",
                     "instructions": "",
@@ -183,7 +183,15 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": [],
+                    "choices": {
+                        "mad_default": "Site Default",
+                        "post": "Post",
+                        "page": "Page",
+                        "attachment": "Media",
+                        "wpsl_stores": "Store",
+                        "uxi_locations": "Location",
+                        "mad360_testimonial": "Testimonial"
+                    },
                     "default_value": [],
                     "allow_null": 0,
                     "multiple": 0,
@@ -194,7 +202,7 @@
                 },
                 {
                     "key": "field_5d5eea5161e0e",
-                    "label": "Layout",
+                    "label": "",
                     "name": "layout",
                     "type": "group",
                     "instructions": "",
@@ -298,5 +306,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1566501767
+    "modified": 1566536948
 }
