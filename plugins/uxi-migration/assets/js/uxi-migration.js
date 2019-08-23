@@ -2,6 +2,7 @@
 
 	function hit_endpoint(index, subindex) {
 		if (index < Object.keys(postObj).length) {
+			updateProgress(Object.keys(postObj).length, index + 1, Object.keys(postObj)[index], subindex, postObj[Object.keys(postObj)[index]].length);
 			var ajaxData = {};
 			switch(Object.keys(postObj)[index]) {
 				case 'assets':

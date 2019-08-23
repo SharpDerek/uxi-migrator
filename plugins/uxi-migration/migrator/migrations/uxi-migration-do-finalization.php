@@ -29,8 +29,14 @@ function uxi_finalize_post_type($post_type) {
 
 		wp_reset_query();
 
-		foreach($post_type_templates as $post_type_template) {
-			
+		$default_layouts = get_field('default_layouts', 'option');
+
+		foreach($default_layouts as $index => $default_layout) {
+			if ($default_layout['post_type'] == $post_type) {
+				foreach($post_type_templates as $post_type_template_name => $post_type_template) {
+					$default_layouts[$index]['layout'][$post_type_template_name] = array($post_type_template['most_used_layout']);
+				}
+			}
 		}
 
 	}
