@@ -1,28 +1,12 @@
-<?php get_header(); ?>
+<?php ob_start();
 
-  <?php mad_content_before(); ?>
-  
-    <?php mad_main_before(); ?>
-      <div class="main <?php echo mad_main_class(); ?>" role="main">
-        <?php mad_main_inside_before(); ?>
-        
-          <?php get_template_part('templates/page-header'); ?>
+  $tag_description = tag_description();
+  if ( ! empty( $tag_description ) )
+    echo apply_filters( 'tag_archive_meta', '<div class="description">' . $tag_description . '</div>' );
+?>
+
+<?php get_template_part('templates/loop');
           
-          <?php
-            $tag_description = tag_description();
-            if ( ! empty( $tag_description ) )
-              echo apply_filters( 'tag_archive_meta', '<div class="description">' . $tag_description . '</div>' );
-          ?>
-          
-          <?php get_template_part('templates/loop'); ?>
-          
-        <?php mad_main_inside_after(); ?>
-      </div>
-      <!-- /.main -->
-    <?php mad_main_after(); ?>
-      
-    <?php get_sidebar(); ?>
-    
-  <?php mad_content_after(); ?>
-  
-<?php get_footer(); ?>
+  $additional_content = ob_get_clean();
+
+require_once(get_stylesheet_directory().'/layout/layout-loader.php');
