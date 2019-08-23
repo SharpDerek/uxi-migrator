@@ -41,6 +41,8 @@ function uxi_rest_endpoint(WP_REST_Request $request){
     $do_scripts = $request['do_scripts'];
     $do_mobile = $request['do_mobile'];
     $do_location_settings = $request['do_location_settings'];
+    $do_finalization = $request['do_finalization'];
+    $finalize_post_type = $request['finalize_post_type'];
 
     define('UXI_URL',trailingslashit($request['uxi_url']));
 

@@ -16,9 +16,7 @@
     <?php else : ?>
 
       <li>
-        <?php mad_post_before(); ?>
           <section <?php post_class('search-result'); ?>>
-          <?php mad_post_inside_before(); ?>    
           
             <header class="post-header">
               <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -30,12 +28,10 @@
                 <?php the_post_thumbnail('thumbnail', 'itemprop=image'); ?>
               </a>
             <?php endif; ?>
-              <?php mad_the_excerpt( POST_EXCERPT_LENGTH ); ?>
+              <?php mad_excerpt(); ?>
             </div>
           
-            <?php mad_post_inside_after(); ?>
           </section>
-        <?php mad_post_after(); ?>
       </li>
       
     <?php endif; ?>
@@ -45,4 +41,4 @@
 
 </ul>
 
-<?php mad_posts_pagination(); ?>
+<?php mad_posts_nav(); ?>

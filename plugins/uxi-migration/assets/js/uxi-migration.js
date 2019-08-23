@@ -2,6 +2,7 @@
 
 	function hit_endpoint(index, subindex) {
 		if (index < Object.keys(postObj).length) {
+			updateProgress(Object.keys(postObj).length, index + 1, Object.keys(postObj)[index], subindex, postObj[Object.keys(postObj)[index]].length);
 			var ajaxData = {};
 			switch(Object.keys(postObj)[index]) {
 				case 'assets':
@@ -32,11 +33,26 @@
 						'uxi_url': uxi_url
 					}
 					break;
-				default:
+				case 'do_finalization':
 					ajaxData = {
 						'_wpnonce': nonce,
-						'post_id': postObj[Object.keys(postObj)[index]][subindex],
+						'do_finalization': 1,
 						'uxi_url': uxi_url
+					}
+					break;
+				default:
+					if (postObj[Object.keys(postObj)[index]][subindex] == 'finalize') {
+						ajaxData = {
+							'_wpnonce': nonce,
+							'finalize_post_type': Object.keys(postObj)[index],
+							'uxi_url': uxi_url
+						}
+					} else {
+						ajaxData = {
+							'_wpnonce': nonce,
+							'post_id': postObj[Object.keys(postObj)[index]][subindex],
+							'uxi_url': uxi_url
+						}
 					}
 					break;
 			}

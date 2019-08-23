@@ -1,7 +1,6 @@
 <?php
 	$class = get_sub_field('class');
 	$id = get_sub_field('id');
-	$content = get_sub_field('content',false);
 	$heading_tag = get_sub_field('heading_tag');
 	if (is_home() || is_archive()) {
 		$post = get_queried_object();
@@ -40,6 +39,7 @@
 					<?php endif; ?>
 					<div class="editor-content">
 						<?php get_template_part('templates/loop','page'); ?>
+						<?php echo do_shortcode($additional_content); ?>
 					</div>
 				<?php endif; ?>
 			</div>

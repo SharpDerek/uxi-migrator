@@ -17,6 +17,7 @@ function uxi_do_create_layout_post($xpath, $query, $section, $slug) {
 						'post_title' => $section.' layout '.$data_layout. ' (retrieved from "'.$slug.'")',
 						'meta_input' => array (
 							'uxi_data_layout' => $data_layout,
+							'uxi_template_uses' => 1,
 						)
 					)
 				);
