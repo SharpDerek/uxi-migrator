@@ -18,11 +18,13 @@ function mad_get_layout($layout_name = 'uxi_main_layout') {
 		$site_default = array();
 		$post_type_default = array();
 
-		foreach ($default_layouts as $default_layout) {
-			if ($default_layout['post_type'] == get_post_type()) {
-				$post_type_default = $default_layout['layout'];
-			} else if ($default_layout['post_type'] == 'mad_default') {
-				$site_default = $default_layout['layout'];
+		if ($default_layouts) {
+			foreach ($default_layouts as $default_layout) {
+				if ($default_layout['post_type'] == get_post_type()) {
+					$post_type_default = $default_layout['layout'];
+				} else if ($default_layout['post_type'] == 'mad_default') {
+					$site_default = $default_layout['layout'];
+				}
 			}
 		}
 
@@ -102,6 +104,8 @@ function mad_populate_defaults() {
 
 		$rows = get_field('default_layouts', 'option');
 
+		$rows_changed = false;
+
 		if ($rows) {
 			foreach ($post_types as $post_type) {
 				$has_post_type_row = false;
@@ -114,8 +118,12 @@ function mad_populate_defaults() {
 					add_row('default_layouts', array (
 						'post_type' => $post_type
 					), 'option');
+					$rows_changed = true;
 				}
 			}
+		}
+		if ($rows_changed) {
+			update_field('default_layouts', $rows, 'option');
 		}
 	}
 }

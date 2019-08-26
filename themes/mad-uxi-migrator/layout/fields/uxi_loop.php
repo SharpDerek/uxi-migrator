@@ -7,9 +7,11 @@
 	} else {
 		$post = get_post(MAIN_PAGE_ID);
 	}
+	$content = get_sub_field('content', false);
 ?>
 <div uxi-widget id="<?php echo $id; ?>" class="<?php echo $class; ?>">
 	<div class="content">
+    <?php echo do_shortcode($content); ?>
 		<main class="main" id="main-content" role="main" aria-labelledby="main-title">
 			<div class="post-<?php echo MAIN_PAGE_ID; ?>">
 				<?php if (is_home() || is_archive()): ?>

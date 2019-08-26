@@ -26,10 +26,17 @@ foreach($xpath->query('//nav//ul[contains(@class,"nav")]') as $nav_list) {
 	}
 }
 
+foreach($xpath->query('//*[@class="content"]/style') as $style) {
+	$content.=$dom->saveHTML($style);
+}
+
+$content = uxi_strip_html($content);
+
 array_push($fields,array(
 	'acf_fc_layout' => $widget_layout,
 	'id' => $id,
 	'class' => $class,
+	'content' => $content,
 	'widget_uxi_menu' => $menu,
 	'menu_classes' => $menu_class,
 	'menu_style' => $menu_style,

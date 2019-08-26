@@ -6,17 +6,11 @@ if (!UXI_ITEM) {
 
 $xpath = new DOMXpath($dom);
 
-foreach($xpath->query($element->getNodePath().'//*[@class="content"]/*') as $child) {
+foreach($xpath->query($element->getNodePath().'//*[@class="content"]/*|//*[@class="content"]/text()') as $child) {
 	$content.= uxi_relative_url($dom->saveHTML($child));
 }
 
-$list = get_html_translation_table(HTML_ENTITIES);
-unset($list['"']);
-unset($list['<']);
-unset($list['>']);
-unset($list['&']);
-
-$content = strtr($content, $list);
+$content = uxi_strip_html($content);
 
 array_push($fields,array(
 	'acf_fc_layout' => $layout,

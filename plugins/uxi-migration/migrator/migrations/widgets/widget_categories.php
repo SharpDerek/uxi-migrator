@@ -18,10 +18,17 @@ $hierarchical = $xpath->query('//*[@class="content"]//ul//ul')->length > 0;
 
 $dropdown = $xpath->query('//*[@class="content"]/ul')->length <= 0;
 
-array_push($fields,array(
+foreach($xpath->query('//*[@class="content"]/style') as $style) {
+	$content.=$dom->saveHTML($style);
+}
+
+$content = uxi_strip_html($content);
+
+array_push($fields, array(
 	'acf_fc_layout' => $widget_layout,
 	'id' => $id,
 	'class' => $class,
+	'content' => $content,
 	'title' => $title,
 	'title_class' => $title_class,
 	'show_count' => $show_count,

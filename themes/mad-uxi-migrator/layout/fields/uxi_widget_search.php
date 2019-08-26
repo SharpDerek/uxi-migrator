@@ -2,9 +2,11 @@
 	$class = get_sub_field('class');
 	$id = get_sub_field('id');
 	$placeholder = get_sub_field('placeholder');
+  $content = get_sub_field('content', false);
 ?>
 <div uxi-widget="uxi_widget_search" id="<?php echo $id; ?>" class="<?php echo $class; ?>">
 	<div class="content">
+    <?php echo do_shortcode($content); ?>
 		<form role="search" method="get" class="search-form search-form-block" action="/">
             <label class="sr-only" for="uxi-search-2">Search for:</label>
             <div class="clearfix">
