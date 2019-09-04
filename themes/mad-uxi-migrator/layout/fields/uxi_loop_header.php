@@ -1,6 +1,12 @@
 <?php
 	$class = get_sub_field('class');
 	$id = get_sub_field('id');
+	if (is_404()){
+		$post_title = "Not Found";
+	} else if (is_search()) {
+		global $wp_query;
+		$post_title = "Search Results for '{$wp_query->query['s']}'";
+	} else if (is_home() || is_archive()) {
 		$post = get_queried_object();
 <<<<<<< Updated upstream
 		$post_title = $post->label;
