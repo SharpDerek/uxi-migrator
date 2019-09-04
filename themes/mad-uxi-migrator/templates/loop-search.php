@@ -1,11 +1,12 @@
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
+
 <?php if (!have_posts()) : ?>
   <div class="alert alert-info">
     <?php _e('Sorry, no results were found.', 'mad'); ?>
   </div>
 <?php endif; ?>
 
-<ul class="search-results products">
+<ol class="search-results posts">
   <?php /* Start loop */ ?>
   <?php while (have_posts()) : the_post(); ?>
   
@@ -15,23 +16,21 @@
       
     <?php else : ?>
 
-      <li>
-          <section <?php post_class('search-result'); ?>>
+      <li <?php post_class('search-result'); ?>>
+
+        <div class="post-body">
           
-            <header class="post-header">
-              <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-            </header>
+            <div class="post-header">
+              <h2 class="post-header-title inherit"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            </div>
             
             <div class="post-description clearfix">
-            <?php if ( has_post_thumbnail()) : ?>
-              <a class="post-thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                <?php the_post_thumbnail('thumbnail', 'itemprop=image'); ?>
-              </a>
-            <?php endif; ?>
+            <p>
+              <b><?php echo sprintf(__('%s', 'mad'), get_the_date(), get_the_time()) ?> | <?php echo get_the_permalink(); ?></b>
+            </p>
               <?php mad_excerpt(); ?>
             </div>
-          
-          </section>
+        </div>
       </li>
       
     <?php endif; ?>

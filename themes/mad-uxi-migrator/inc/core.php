@@ -5,14 +5,6 @@ function mad_get_layout($layout_name = 'uxi_main_layout') {
 
 	if (function_exists('get_field')) {
 
-		if (is_home() || is_archive()) {;
-			$main_id = get_queried_object_id();
-		} else {
-			$main_id = get_the_ID();
-		}
-
-		$layout = get_field("layout", $main_id);
-
 		$default_layouts = get_field('default_layouts', 'option');
 
 		$site_default = array();
@@ -25,6 +17,26 @@ function mad_get_layout($layout_name = 'uxi_main_layout') {
 				$site_default = $default_layout['layout'];
 			}
 		}
+		if (is_search() || is_404()) {
+			return $site_default[$layout_name][0];
+		} else if (is_home() || is_archive()) {
+			if (is_category()) {
+				$main_id = get_option('page_for_posts');
+			} else {
+				if (property_exists(get_queried_object(), 'rewrite')) {
+					$archive_page = get_page_by_path(get_queried_object()->rewrite['slug']);
+				}
+				if ($archive_page) {
+					$main_id = $archive_page->ID;
+				} else {
+					$main_id = get_queried_object_id();
+				}
+			}
+		} else {
+			$main_id = get_the_ID();
+		}
+
+		$layout = get_field("layout", $main_id);
 
 		if ($layout_name == 'uxi_main_layout' && have_rows('block', $main_id)) { // Check individual post for rows ONLY if on a page layout
 			return $main_id;
@@ -127,7 +139,6 @@ function mad_excerpt() {
 	<a href="<?php echo get_permalink($post->ID); ?>" class="read-more-link inline none" title="Read Full Post" rel="bookmark">Read More</a>
 	<?php 
 	$readmore = ob_get_contents();
-	var_dump($readmore);
 	ob_end_clean();
 	$excerpt = wp_trim_words($post->post_content, 53, "&hellip;".$readmore);
 	echo $excerpt;

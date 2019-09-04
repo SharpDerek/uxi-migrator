@@ -3,8 +3,9 @@
 if (!function_exists("get_field")) {
 	die("Looks like you don't have ACF installed. That's gonna be a problem.");
 }
-
-if (is_home() || is_archive()) {;
+if (is_search()) {
+	$main_id = mad_get_layout('uxi_main_layout');
+} else if (is_home() || is_archive()) {
 	$main_id = get_queried_object_id();
 } else {
 	$main_id = get_the_ID();

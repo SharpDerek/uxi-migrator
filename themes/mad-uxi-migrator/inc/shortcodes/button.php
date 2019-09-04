@@ -46,7 +46,7 @@ class UXi_Button_Shortcode {
 
         STATIC $i = 0;
         $i++;
-        $id = "button-id-$i";
+        $id = "button-$i";
 
         /**
          * CLASS

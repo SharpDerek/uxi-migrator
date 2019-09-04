@@ -18,7 +18,7 @@
         <?php endif; ?>
         <div class="testimonial-body">
           <header class="testimonial-header">
-            <h2 class="testimonial-title h4">
+            <h2 class="testimonial-title h3">
               <a href="<?php the_permalink(); ?>" title="Permanent Link to Full Post" rel="bookmark"><span><?php the_title(); ?></span></a>
             </h2>
             <?php //get_template_part('templates/post-meta'); ?>
