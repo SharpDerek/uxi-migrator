@@ -1,4 +1,4 @@
-<?
+<?php
 
 function mad_get_layout($layout_name = 'uxi_main_layout') {
 	global $post;
