@@ -111,7 +111,7 @@ class UXi_Shortcode_Gallery {
 
                     $thumb_style = ($has_caption && $thumbnail_style === 'thumbnail') ? '' : $img_style;
                     $image_large = wp_get_attachment_image_src($id, 'large');
-                    $image_thumb = uxi_get_image($id, 'gallery_thumb', array('class' => "lazyload img-lazyload gallery-thumb $thumb_style"));
+                    $image_thumb = wp_get_attachment_image($id, 'gallery_thumb', false, array('class' => "lazyload img-lazyload gallery-thumb $thumb_style"));
 
                     // column clear classes
                     if (($i % absint($desktop_columns) === 1) && ($i !== 1)) { $clear_desk = ' clear-desk'; } else { $clear_desk = ''; }
@@ -122,10 +122,10 @@ class UXi_Shortcode_Gallery {
                     // output gallery
                     $output .= '<figure class="'.trim($item_classes).'">';
                     $output .= ($has_caption && $thumbnail_style === 'thumbnail') ? '<div class="thumbnail">' : '';
-                    $output .= '<a class="gallery-link" href="'.esc_url($image_large[0]).'" data-fancybox="'.esc_attr($selector).'" data-srcset="'.uxi_calculate_image_srcset($id, 'large').'" data-caption="'.esc_attr(uxi_kses_text($caption_text)).'" data-width="'.$image_large[1].'" data-height="'.$image_large[2].'">';
+                    $output .= '<a class="gallery-link" href="'.esc_url($image_large[0]).'" data-fancybox="'.esc_attr($selector).'" data-height="'.$image_large[2].'">';
                     $output .= $image_thumb;
                     $output .= '</a>';
-                    $output .= '<figcaption class="'.$caption_classes.'">' . uxi_kses_text($caption_text) .'</figcaption>';
+                    $output .= '<figcaption class="'.$caption_classes.'">' . wp_kses_post($caption_text) .'</figcaption>';
                     $output .= ($has_caption && $thumbnail_style === 'thumbnail') ? '</div>' : '';
                     $output .= '</figure>';
 
@@ -145,8 +145,6 @@ class UXi_Shortcode_Gallery {
                     $schema[] = $image_object;
                 }
                 wp_reset_postdata();
-
-                UXI_SEO_Schema::add_webpage_item('associatedMedia', $schema);
             }
 
             $output .= '</div>';
